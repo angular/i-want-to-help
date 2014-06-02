@@ -22,6 +22,20 @@ angular.module('qaStore').
   		},
   	};
 
+    this.__defineSetter__('currentNode', function(node) {
+      if(typeof node === 'string') {
+        throw new Error('currentNode must be a node, got: string');
+      }
+      if(node && (!node.id || !node.parent)) {
+        throw new Error('Current node must have properties: id, parent');
+      }
+      this._currentNode = node;
+    });
+
+    this.__defineGetter__('currentNode', function(node) {
+      return this._currentNode;
+    });
+
   	this.getRoot = function() {
   		return questions.a;
   	};

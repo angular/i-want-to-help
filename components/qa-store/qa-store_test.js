@@ -62,7 +62,7 @@ describe('qaStore', function() {
 
 
     describe('.getParent()', function(){
-      it('should return a single node', function(){
+      it('should return a single node', function (){
         var testNode = {
           parent: 'a'
         };
@@ -70,13 +70,13 @@ describe('qaStore', function() {
       });
 
 
-      it('should return undefined for the root node', function(){
+      it('should return undefined for the root node', function() {
         var rootNode = qaStoreService.getRoot();
         expect(qaStoreService.getParent(rootNode)).toBe(undefined);
       });
 
 
-      it('should throw if parent is not found', function(){
+      it('should throw if parent is not found', function() {
         var node = {
           parent : 'fakeId'
         };
@@ -86,12 +86,80 @@ describe('qaStore', function() {
       });
 
 
-      it('should throw if argument is undefined', function(){
+      it('should throw if argument is undefined', function() {
         expect(function() {
           qaStoreService.getParent(undefined);
         }).toThrow('childNode must be a node, got: undefined'); 
       });
-    });	
+    });
+
+
+    describe('.currentNode', function(){
+      it('should be undefined by default', function() {
+        expect(qaStoreService.currentNode).toBeUndefined();
+      });
+
+
+      it('should set currentNode to provided node', function() {
+        var node = {
+          id: 'b',
+          children: ['e', 'f'],
+          parent: 'a' 
+        }; 
+
+        qaStoreService.currentNode = node; 
+        expect(qaStoreService._currentNode).toBe(node);
+      });
+
+
+      it('should throw if assigned a string', function() {
+        expect(function() {
+          qaStoreService.currentNode = 'a';
+        }).toThrow('currentNode must be a node, got: string');
+      });
+
+
+      it('should throw if not node like', function() {
+        var badNode = { 
+          size: 12
+        };
+
+        var goodNode = {
+          id: 'b',
+          parent: 'a'
+        };
+
+        expect(function() {
+          qaStoreService.currentNode = badNode;
+        }).toThrow('Current node must have properties: id, parent');
+
+        expect(function() {
+          qaStoreService.currentNode = goodNode;
+        }).not.toThrow();
+      });
+
+
+      it('should accept null value', function() {
+        qaStoreService.currentNode = null;
+        expect(qaStoreService._currentNode).toBeNull();
+      });
+
+
+      it('should return the assigned value', function() {
+        expect(qaStoreService.currentNode).toBeUndefined();
+        var node = {
+          id: 'b',
+          parent: 'a'
+        };
+        qaStoreService._currentNode = node;
+        expect(qaStoreService.currentNode).toBe(node);
+      });
+
+    });
+
+    //describe('.getCurrentNode()', function(){
+    //   it('should return ')
+    // });	
 	});
 });
 
