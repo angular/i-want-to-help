@@ -1,0 +1,17 @@
+{
+  "name": "i-want-to-help",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ealtenho/i-want-to-help",
+  "authors": [
+    "Erin Altenhof-Long <ealtenhof@google.com>"
+  ],
+  "description": "angular help app",
+  "main": "app.js",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "apache 2",
+  "dependencies": {
+    "angular-mocks": "~1.2.16"
+  }
+}
