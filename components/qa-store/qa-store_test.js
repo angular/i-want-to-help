@@ -34,7 +34,19 @@ describe('qaStore', function() {
 
 
       it('should throw if parent node does not have a children array', function(){
-        expect(qaStoreService.getChildren).toThrow(new Error('Parent node must have children'));
+        var node = {
+          children: 'foo'
+        };
+        expect(function() {
+          qaStoreService.getChildren(node);
+        }).toThrow(new Error('Parent node must have children'));
+      });
+
+
+      it('should throw if argument is undefined', function(){
+        expect(function() {
+          qaStoreService.getChildren(undefined);
+        }).toThrow('parentNode must be a node, got: undefined'); 
       });
 
 
@@ -46,7 +58,40 @@ describe('qaStore', function() {
           qaStoreService.getChildren(node);
         }).toThrow('Child does not exist for id: fakeId');
       });
-    })	
+    });
+
+
+    describe('.getParent()', function(){
+      it('should return a single node', function(){
+        var testNode = {
+          parent: 'a'
+        };
+        expect(qaStoreService.getParent(testNode).id).toBe('a');
+      });
+
+
+      it('should return undefined for the root node', function(){
+        var rootNode = qaStoreService.getRoot();
+        expect(qaStoreService.getParent(rootNode)).toBe(undefined);
+      });
+
+
+      it('should throw if parent is not found', function(){
+        var node = {
+          parent : 'fakeId'
+        };
+        expect(function() {
+          qaStoreService.getParent(node);
+        }).toThrow('Parent does not exist for id: fakeId'); 
+      });
+
+
+      it('should throw if argument is undefined', function(){
+        expect(function() {
+          qaStoreService.getParent(undefined);
+        }).toThrow('childNode must be a node, got: undefined'); 
+      });
+    });	
 	});
 });
 
