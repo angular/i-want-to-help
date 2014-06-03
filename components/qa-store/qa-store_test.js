@@ -18,7 +18,7 @@ describe('qaStore', function() {
 				var rootNode = qaStoreService.getRoot();
 				expect(rootNode.choices.length).toBeGreaterThan(0);
 				expect(rootNode.question).toBeNull();
-        expect(rootNode.url).toBeNull();
+        expect(rootNode.url).toBe('/');
 			});
 		});
 
@@ -80,6 +80,23 @@ describe('qaStore', function() {
       });
     });
 
+    describe('.getByUrl()', function() {
+      it('should return a node for a given url', function() {
+        var url = 'fake-url';
+        var node = {};
+        qaStoreService.questions_ = {'fake-url':node};
+        expect(qaStoreService.getByUrl(url)).toBe(node);
+      })
+
+      it('should return undefined if a given url does not have a corresponding node', function(){
+        expect(qaStoreService.getByUrl('fake-url')).toBeUndefined();
+      })
+
+      it('should throw if given url is not of type string', function() {
+        expect(qaStoreService.getByUrl).
+          toThrow(new Error('url must be of type string, got: undefined'));
+      })
+    })
 
     describe('.currentNode', function() {
 
