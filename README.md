@@ -1,2 +1,1 @@
-i-want-to-help
-==============
+[Apache 2.0 License](https://github.com/angular/i-want-to-help/blob/master/LICENSE)
