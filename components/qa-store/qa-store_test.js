@@ -73,7 +73,10 @@ describe('qaStore', function() {
 
       it('should return a backUrl equal to parent\'s url', function() {
         var root = qaStoreService.getRoot();
-        var second = root.getChoices
+        var second = qaStoreService.getChoices(root);
+        var choice1 = second[0];
+        var result = qaStoreService.getBackUrl(choice1);
+        expect(root.url).toBe(result);
       });
     });
 
