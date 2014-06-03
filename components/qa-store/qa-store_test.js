@@ -16,89 +16,73 @@ describe('qaStore', function() {
 
 			it('should return a node with the proper root content', function() {
 				var rootNode = qaStoreService.getRoot();
-				expect(rootNode.children.length).toBeGreaterThan(0);
-				expect(rootNode.question).toBe(null);
+				expect(rootNode.choices.length).toBeGreaterThan(0);
+				expect(rootNode.question).toBeNull();
+        expect(rootNode.url).toBeNull();
 			});
 		});
 
 
-    describe('.getChildren()', function() {
+    describe('.getChoices()', function() {
       it('should return an array of nodes', function() {
         var rootNode = qaStoreService.getRoot();
-        var children = qaStoreService.getChildren(rootNode);
-        expect(Array.isArray(children)).toBe(true);
-        expect(children[0].parent).toBe('a');
-        expect(children[1].parent).toBe('a');
-        expect(children[2].parent).toBe('a');
+        var choices = qaStoreService.getChoices(rootNode);
+        expect(Array.isArray(choices)).toBe(true);
       });
 
 
-      it('should throw if parent node does not have a children array', function() {
+      it('should throw if node does not have a choices array', function() {
         var node = {
-          children: 'foo'
+          choices: 'foo'
         };
         expect(function() {
-          qaStoreService.getChildren(node);
-        }).toThrow(new Error('Parent node must have children'));
+          qaStoreService.getChoices(node);
+        }).toThrow(new Error('Node must have choices'));
       });
 
 
       it('should throw if argument is undefined', function() {
         expect(function() {
-          qaStoreService.getChildren(undefined);
-        }).toThrow('parentNode must be a node, got: undefined');
-      });
-
-
-      it('should throw if child does not exist for an id', function() {
-        var node = {
-          children : ['fakeId']
-        };
-        expect(function() {
-          qaStoreService.getChildren(node);
-        }).toThrow('Child does not exist for id: fakeId');
+          qaStoreService.getChoices(undefined);
+        }).toThrow('Node must be valid, got: undefined');
       });
     });
 
 
-    describe('.getParent()', function() {
-      it('should return a single node', function () {
+    describe('.getBackUrl()', function() {
+      it('should return a url as a string', function () {
         var testNode = {
-          parent: 'a'
+          backUrl: 'a'
         };
-        expect(qaStoreService.getParent(testNode).id).toBe('a');
+        expect(qaStoreService.getBackUrl(testNode)).toBe('a');
       });
 
 
       it('should return undefined for the root node', function() {
         var rootNode = qaStoreService.getRoot();
-        expect(qaStoreService.getParent(rootNode)).toBe(undefined);
-      });
-
-
-      it('should throw if parent is not found', function() {
-        var node = {
-          parent : 'fakeId'
-        };
-        expect(function() {
-          qaStoreService.getParent(node);
-        }).toThrow('Parent does not exist for id: fakeId');
+        expect(qaStoreService.getBackUrl(rootNode)).toBe(undefined);
       });
 
 
       it('should throw if argument is undefined', function() {
         expect(function() {
-          qaStoreService.getParent(undefined);
-        }).toThrow('childNode must be a node, got: undefined');
+          qaStoreService.getBackUrl(undefined);
+        }).toThrow('Node must be valid, got: undefined');
+      });
+
+
+      it('should return a backUrl equal to parent\'s url', function() {
+        var root = qaStoreService.getRoot();
+        var second = root.getChoices
       });
     });
 
 
     describe('.currentNode', function() {
-      it('should be undefined by default', function() {
-        expect(qaStoreService.currentNode).toBeUndefined();
-      });
 
+      it('should be initialized with root as currentNode', function() {
+        expect(qaStoreService.currentNode).toBe(qaStoreService.getRoot());
+      })
 
       it('should set currentNode to provided node', function() {
         var node = {
@@ -146,7 +130,7 @@ describe('qaStore', function() {
 
 
       it('should return the assigned value', function() {
-        expect(qaStoreService.currentNode).toBeUndefined();
+        expect(qaStoreService.currentNode).toBe(qaStoreService.getRoot());
         var node = {
           id: 'b',
           parent: 'a'
