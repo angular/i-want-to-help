@@ -10,16 +10,57 @@ angular.module('qaStore').
   		},
   		b: {
   			id: 'b',
-  			parent: 'a'
+  			parent: 'a',
+        children: ['e', 'f', 'g'],
+        question: 'I want to help other developers understand Angular.'
   		},
   		c: {
   			id: 'c',
-  			parent: 'a'
+  			parent: 'a',
+        children: ['h', 'i'],
+        question: 'I want to help improve Angular itself.'
   		},
   		d: {
   			id: 'd',
-  			parent: 'a'
+  			parent: 'a',
+        children: ['j', 'k'],
+        question: 'I want to help make components for Angular.'
   		},
+      e: {
+        id: 'e',
+        parent: 'b',
+        question: 'I can help update Angular\'s documentation.'
+      },
+      f: {
+        id: 'f',
+        parent: 'b',
+        question: 'I can share resources that helped me understand Angular.'
+      },
+      g: {
+        id: 'g',
+        parent: 'b',
+        question: 'I can help update Angular\'s tutorial.'
+      },
+      h: {
+        id: 'h',
+        parent: 'c',
+        question: 'I can help respond to PR flags.'
+      },
+      i: {
+        id: 'i',
+        parent: 'c',
+        question: 'I can help triage issues.'
+      },
+      j: {
+        id: 'j',
+        parent: 'd',
+        question: 'I can help triage issues.'
+      },
+      k: {
+        id: 'k',
+        parent: 'd',
+        question: 'I can help improve support for current components.'
+      }
   	};
 
     this.__defineSetter__('currentNode', function(node) {
