@@ -3,11 +3,11 @@ angular.module('qaStore').
   	var questions = {
   		a: {
   			id: 'a',
-  			parent: null, 
-  			children: ['b', 'c', 'd'], 
+  			parent: null,
+  			children: ['b', 'c', 'd'],
   			question: null,
         root: true
-  		}, 
+  		},
   		b: {
   			id: 'b',
   			parent: 'a'
@@ -40,33 +40,33 @@ angular.module('qaStore').
   		return questions.a;
   	};
 
-  	this.getChildren = function(parentNode){
-  		if(!parentNode){
+  	this.getChildren = function(parentNode) {
+  		if(!parentNode) {
         throw new Error('parentNode must be a node, got: ' + parentNode);
       }
-      else if(!parentNode.children || !Array.isArray(parentNode.children)){
+      else if(!parentNode.children || !Array.isArray(parentNode.children)) {
   		  throw new Error('Parent node must have children');
   		}
   		var children = [];
   		parentNode.children.forEach(function(id) {
         var child = questions[id];
-        if(!child){
-          throw new Error('Child does not exist for id: ' + id);   
+        if(!child) {
+          throw new Error('Child does not exist for id: ' + id);
         }
   			children.push(questions[id]);
   		});
   		return children;
   	};
 
-    this.getParent = function(childNode){
-      if(!childNode){
+    this.getParent = function(childNode) {
+      if(!childNode) {
         throw new Error('childNode must be a node, got: ' + childNode);
       }
-      else if(childNode.root){
+      else if(childNode.root) {
         return undefined;
       }
-      else if(!questions[childNode.parent]){
-        throw new Error('Parent does not exist for id: ' + childNode.parent); 
+      else if(!questions[childNode.parent]) {
+        throw new Error('Parent does not exist for id: ' + childNode.parent);
       }
       return questions[childNode.parent];
     };

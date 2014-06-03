@@ -2,19 +2,19 @@ describe('qaStore', function() {
 	var qaStoreService;
 
 	beforeEach(module('qaStore'));
-	beforeEach(inject(function(_qaStoreService_){
+	beforeEach(inject(function(_qaStoreService_) {
 		qaStoreService = _qaStoreService_;
 	}));
 
 
-	describe('qaStoreService', function() {			
+	describe('qaStoreService', function() {
 		describe('.getRoot()', function() {
 			it('should have a get root method', function() {
 				expect(typeof qaStoreService.getRoot).toBe('function');
 			});
 
 
-			it('should return a node with the proper root content', function(){
+			it('should return a node with the proper root content', function() {
 				var rootNode = qaStoreService.getRoot();
 				expect(rootNode.children.length).toBeGreaterThan(0);
 				expect(rootNode.question).toBe(null);
@@ -22,8 +22,8 @@ describe('qaStore', function() {
 		});
 
 
-    describe('.getChildren()', function(){
-      it('should return an array of nodes', function(){
+    describe('.getChildren()', function() {
+      it('should return an array of nodes', function() {
         var rootNode = qaStoreService.getRoot();
         var children = qaStoreService.getChildren(rootNode);
         expect(Array.isArray(children)).toBe(true);
@@ -33,7 +33,7 @@ describe('qaStore', function() {
       });
 
 
-      it('should throw if parent node does not have a children array', function(){
+      it('should throw if parent node does not have a children array', function() {
         var node = {
           children: 'foo'
         };
@@ -43,26 +43,26 @@ describe('qaStore', function() {
       });
 
 
-      it('should throw if argument is undefined', function(){
+      it('should throw if argument is undefined', function() {
         expect(function() {
           qaStoreService.getChildren(undefined);
-        }).toThrow('parentNode must be a node, got: undefined'); 
+        }).toThrow('parentNode must be a node, got: undefined');
       });
 
 
-      it('should throw if child does not exist for an id', function(){
+      it('should throw if child does not exist for an id', function() {
         var node = {
           children : ['fakeId']
         };
-        expect(function() { 
+        expect(function() {
           qaStoreService.getChildren(node);
         }).toThrow('Child does not exist for id: fakeId');
       });
     });
 
 
-    describe('.getParent()', function(){
-      it('should return a single node', function (){
+    describe('.getParent()', function() {
+      it('should return a single node', function () {
         var testNode = {
           parent: 'a'
         };
@@ -82,19 +82,19 @@ describe('qaStore', function() {
         };
         expect(function() {
           qaStoreService.getParent(node);
-        }).toThrow('Parent does not exist for id: fakeId'); 
+        }).toThrow('Parent does not exist for id: fakeId');
       });
 
 
       it('should throw if argument is undefined', function() {
         expect(function() {
           qaStoreService.getParent(undefined);
-        }).toThrow('childNode must be a node, got: undefined'); 
+        }).toThrow('childNode must be a node, got: undefined');
       });
     });
 
 
-    describe('.currentNode', function(){
+    describe('.currentNode', function() {
       it('should be undefined by default', function() {
         expect(qaStoreService.currentNode).toBeUndefined();
       });
@@ -104,10 +104,10 @@ describe('qaStore', function() {
         var node = {
           id: 'b',
           children: ['e', 'f'],
-          parent: 'a' 
-        }; 
+          parent: 'a'
+        };
 
-        qaStoreService.currentNode = node; 
+        qaStoreService.currentNode = node;
         expect(qaStoreService._currentNode).toBe(node);
       });
 
@@ -120,7 +120,7 @@ describe('qaStore', function() {
 
 
       it('should throw if not node like', function() {
-        var badNode = { 
+        var badNode = {
           size: 12
         };
 
@@ -154,12 +154,7 @@ describe('qaStore', function() {
         qaStoreService._currentNode = node;
         expect(qaStoreService.currentNode).toBe(node);
       });
-
     });
-
-    //describe('.getCurrentNode()', function(){
-    //   it('should return ')
-    // });	
 	});
 });
 
