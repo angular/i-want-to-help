@@ -5,45 +5,45 @@ angular.module('qaStore').
     helpTriage, helpPRflags, helpSupportComponents, helpShareComponents;
 
     helpShareComponents = {
-      url: 'help-support-components',
+      url: 'help-share-components',
       backUrl: 'help-make-components',
-      choices: [null],
+      choices: [],
       question: 'I can help to share components I have written.'
     };
     helpSupportComponents = {
       url: 'help-support-components',
       backUrl: 'help-make-components',
-      choices: [null],
+      choices: [],
       question: 'I can help to support current components.'
     };
     helpPRflags = {
       url: 'help-pr-flags',
       backUrl: 'help-improve-angular',
-      choices: [null],
+      choices: [],
       question: 'I can help with PR flags.'
     };
     helpTriage = {
       url: 'help-triage',
       backUrl: 'help-improve-angular',
-      choices: [null],
+      choices: [],
       question: 'I can help triage issues.'
     };
     helpShareResources = {
       url: 'help-share-resources',
       backUrl: 'help-other-devs',
-      choices: [null],
+      choices: [],
       question: 'I can help share resources that helped me understand Angular.'
     };
     helpUpdateTutorial = {
       url: 'help-update-tutorial',
       backUrl: 'help-other-devs',
-      choices: [null],
+      choices: [],
       question: 'I can help update Angular\'s tutorial.'
     };
     helpUpdateDocs = {
       url: 'help-update-docs',
       backUrl: 'help-other-devs',
-      choices: [null],
+      choices: [],
       question: 'I can help update Angular\'s documentation.'
     };
     helpMakeComponents = {
