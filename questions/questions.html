@@ -1,4 +1,3 @@
-Hi, this is questions.html {{questionsCtrl.question}}
-<div ng-repeat="answer in questionsCtrl.answers">
-  {{answer}}
+<div ng-repeat="choice in questionsCtrl.choices">
+  <a href="#questions/{{choice.url}}">{{choice.question}}</a>
 </div>

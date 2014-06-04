@@ -97,8 +97,8 @@ angular.module('qaStore').
       if(typeof node === 'string') {
         throw new Error('currentNode must be a node, got: string');
       }
-      if(node && (node.root || !node.id && !node.parent)) {
-        throw new Error('Current node must have properties: id, parent');
+      if(node && (node.root || !node.url && !node.backUrl)) {
+        throw new Error('Current node must have properties: url, backUrl');
       }
       this._currentNode = node;
     });

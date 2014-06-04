@@ -106,9 +106,9 @@ describe('qaStore', function() {
 
       it('should set currentNode to provided node', function() {
         var node = {
-          id: 'b',
-          children: ['e', 'f'],
-          parent: 'a'
+          url: 'b',
+          choices: [{}, {}],
+          backUrl: 'a'
         };
 
         qaStoreService.currentNode = node;
@@ -129,13 +129,13 @@ describe('qaStore', function() {
         };
 
         var goodNode = {
-          id: 'b',
-          parent: 'a'
+          url: 'b',
+          backUrl: 'a'
         };
 
         expect(function() {
           qaStoreService.currentNode = badNode;
-        }).toThrow('Current node must have properties: id, parent');
+        }).toThrow('Current node must have properties: url, backUrl');
 
         expect(function() {
           qaStoreService.currentNode = goodNode;
