@@ -17,9 +17,9 @@ module.exports = function(config) {
       'questions/pr-flags/*.js',
       'questions/support-components/support-components.js',
       'questions/support-components/*.js'
-      'questions/leaves/share-resources.js',
-      'questions/leaves/share-resources-controller.js',
-      'questions/leaves/share-resources_test.js'
+      'questions/share-resources/share-resources.js',
+      'questions/share-resources/share-resources-controller.js',
+      'questions/share-resources/share-resources_test.js'
     ],
     exclude: [
     ],

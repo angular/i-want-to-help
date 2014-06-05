@@ -20,7 +20,7 @@ angular.module('helpApp',
       when('/questions/help-share-resources', {
         controller: 'ShareResourcesController',
         controllerAs: 'shareResourcesCtrl',
-        templateUrl: 'questions/leaves/share-resources.html'
+        templateUrl: 'questions/share-resources/share-resources.html'
       }).
       when('/questions/help-update-tutorial', {
         templateUrl: 'questions/leaves/update-tutorial.html'
