@@ -1,11 +1,6 @@
  angular.module('helpApp', ['qaStore','ngRoute','haQuestions']).
   config(['$routeProvider', function($routeProvider) {
-    $routeProvider.when('/questions/:url', {
-      controller: 'QuestionsController',
-      controllerAs: 'questionsCtrl',
-      templateUrl: 'questions/questions.html'
-    }).
-    when('/questions/help-share-components', {
+    $routeProvider.when('/questions/help-share-components', {
       templateUrl: 'questions/leaves/share-components.html'
     }).
     when('/questions/help-support-components', {
@@ -25,6 +20,11 @@
     }).
     when('/questions/help-update-docs', {
       templateUrl: 'questions/leaves/update-docs.html'
+    }).
+    when('/questions/:url', {
+      controller: 'QuestionsController',
+      controllerAs: 'questionsCtrl',
+      templateUrl: 'questions/questions.html'
     }).
     otherwise('/questions');
   }]);
