@@ -1,9 +1,13 @@
 <div>
   <p>
-    Pull Request flags are issues that have been categorized but have yet to be resolved. Many of the important issues are handled by team members here at Angular, but you're more than welcome to help us out! If you are able to effectively resolve an issue you will be noted as a contributer in the next release, but more importantly you'll be a hero in our hearts.
+    Pull Request flags are issues that have been categorized but have yet to be resolved. Many of
+    the important issues are handled by team members here at Angular, but you're more than welcome
+    to help us out! If you are able to effectively resolve an issue you will be noted as a
+    contributer in the next release, but more importantly you'll be a hero in our hearts.
   </p>
   <p>
-    Below are some of the more recent issues Angular.js has had unresolved. Feel free to search for any issues you find interesting and explore.
+    Below are some of the more recent issues Angular.js has had unresolved. Feel free to search
+    for any issues you find interesting and explore.
   </p>
   <div>
     <input ng-model="query" placeholder="Search for issues:">
@@ -14,7 +18,13 @@
         <span><a ng-href="{{issue['html_url']}}">{{issue['title']}}</a></span>
         <div>
           Labels:
-          <a ng-repeat='label in issues[$index].labels'>[{{label.name}}]</a>
+          <div ng-show="!issues[$index].labels.length">
+            This issue has no labels, learn more about triaging issues
+            <a ng-href="#questions/help-triage">here.</a>
+          </div>
+          <a ng-repeat='label in issues[$index].labels'>
+            <div ng-bind="label.name"></div>
+          </a>
         </div>
       </li>
     </ul>
