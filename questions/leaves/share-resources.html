@@ -1,3 +1,21 @@
 <h1>I can help share resources that helped me to learn Angular</h1>
 
-<a href="https://github.com/jmcunningham/AngularJS-Learning">AngularJS-Learning</a> is a GitHub repository for information about Angular.</a> Submit a pull request to help update the list with information about resources for understanding Angular.
+<p>Help update and maintain this list of resources for learning Angular. <a href="https://github.com/angular/i-want-to-help">Submit a pull request on Github</a></p>
+<div>
+  Filter by type:
+  <select ng-model="shareResourcesCtrl.type" ng-options="type for type in shareResourcesCtrl.types"></select>
+</div>
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Description</td>
+    <td>Type</td>
+    <td>Rating</td>
+  </tr>
+  <tr ng-model="shareResourcesCtrl.type" ng-repeat="link in shareResourcesCtrl.links | filter: shareResourcesCtrl.type">
+    <td><a href="{{link.href}}">{{link.name}}</a></td>
+    <td>{{link.description}}</td>
+    <td>{{link.type[0]}}</td>
+    <td>{{link.rating}}</td>
+  </tr>
+</table>
