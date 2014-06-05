@@ -12,7 +12,9 @@ module.exports = function(config) {
       'components/qa-store/qa-store-service.js',
       'components/qa-store/qa-store_test.js',
       'questions/questions.js',
-      'questions/*.js'
+      'questions/*.js',
+      'questions/pr-flags/pr-flags.js',
+      'questions/pr-flags/*.js'
     ],
     exclude: [
     ],

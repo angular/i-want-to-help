@@ -1,4 +1,4 @@
- angular.module('helpApp', ['qaStore','ngRoute','haQuestions']).
+ angular.module('helpApp', ['qaStore','ngRoute','haQuestions','haPrFlags']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/questions/help-share-components', {
       templateUrl: 'questions/leaves/share-components.html'
@@ -7,6 +7,8 @@
       templateUrl: 'questions/leaves/support-components.html'
     }).
     when('/questions/help-pr-flags', {
+      controller: 'PrFlagsController',
+      controllerAs: 'prFlagsCtrl',
       templateUrl: 'questions/leaves/pr-flags.html'
     }).
     when('/questions/help-triage', {
