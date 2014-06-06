@@ -1,6 +1,8 @@
- angular.module('helpApp', ['qaStore','ngRoute','haQuestions','haPrFlags']).
+ angular.module('helpApp', ['qaStore','ngRoute','haQuestions','haPrFlags','haSupportComponents']).
   config(['$routeProvider', function($routeProvider) {
     $routeProvider.when('/questions/help-share-components', {
+      controller: 'SupportComponentsController',
+      controllerAs: 'supComponentsCtrl',
       templateUrl: 'questions/leaves/share-components.html'
     }).
     when('/questions/help-support-components', {

@@ -14,7 +14,9 @@ module.exports = function(config) {
       'questions/questions.js',
       'questions/*.js',
       'questions/pr-flags/pr-flags.js',
-      'questions/pr-flags/*.js'
+      'questions/pr-flags/*.js',
+      'questions/support-components/support-components.js',
+      'questions/support-components/*.js'
     ],
     exclude: [
     ],
