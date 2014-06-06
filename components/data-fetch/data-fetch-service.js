@@ -1,9 +1,11 @@
 angular.module('dataFetch').
   service('dataFetchService', ['$http', function($http) {
-      var url =
-        'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
+      this.fetchData = function(fetchFrom) {
+        return $http.get(fetchFrom);
+      };
 
-      $http.get(url).success(function(data) {
-        console.log(data);
-      });
+      this.fetchTriage = function() {
+        var triageUrl = 'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
+        return this.fetchData(triageUrl);
+      };
   }]);

@@ -2,12 +2,13 @@ describe('dataFetch', function(){
   var dataFetchService, $httpBackend;
   var url =
     'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
+  var triageUrl =
+    'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
 
   beforeEach(module('dataFetch'));
   beforeEach(inject(function(_dataFetchService_, $injector) {
-
+    dataFetchService = _dataFetchService_;
     $httpBackend = $injector.get('$httpBackend');
-    $httpBackend.when('GET', url).respond({data: 'data'});
   }));
 
   afterEach(function() {
@@ -17,14 +18,21 @@ describe('dataFetch', function(){
 
   describe('dataFetchService', function() {
     describe('.fetchData()', function() {
-      it('should retrieve data', function() {
+      it('should retrieve data from a specified url', function() {
+        $httpBackend.when('GET', url).respond({data: 'data'});
         $httpBackend.expectGET(url);
-        inject(function(_dataFetchService_) {
-          dataFetchService = _dataFetchService_;
-        })
+        var dataReceived = dataFetchService.fetchData(url);
         $httpBackend.flush();
-
       });
-    })
+    });
+
+    describe('.fetchTriage()', function() {
+      it('should retrieve data from the triage url', function() {
+        $httpBackend.when('GET', triageUrl).respond({data: 'triage'});
+        $httpBackend.expectGET(triageUrl);
+        var dataReceived = dataFetchService.fetchTriage();
+        $httpBackend.flush();
+      });
+    });
   });
 });
