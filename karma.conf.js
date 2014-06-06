@@ -19,10 +19,13 @@ module.exports = function(config) {
       'questions/pr-flags/pr-flags.js',
       'questions/pr-flags/*.js',
       'questions/support-components/support-components.js',
-      'questions/support-components/*.js'
+      'questions/support-components/*.js',
       'questions/share-resources/share-resources.js',
       'questions/share-resources/share-resources-controller.js',
-      'questions/share-resources/share-resources_test.js'
+      'questions/share-resources/share-resources_test.js',
+      'questions/triage/triage.js',
+      'questions/triage/triage-controller.js',
+      'questions/triage/triage_test.js'
     ],
     exclude: [
     ],
