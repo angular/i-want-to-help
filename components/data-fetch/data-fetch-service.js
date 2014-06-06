@@ -3,9 +3,14 @@ angular.module('dataFetch').
       this.fetchData = function(fetchFrom) {
         return $http.get(fetchFrom);
       };
-
       this.fetchTriage = function() {
-        var triageUrl = 'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
+        var triageUrl =
+          'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
         return this.fetchData(triageUrl);
+      };
+      this.fetchPR = function() {
+        var pRUrl = 'https://api.github.com/search/'
+          + 'issues?q=angular+angular.js+user:angular&sort=created&per_page=25';
+        return this.fetchData(pRUrl);
       };
   }]);

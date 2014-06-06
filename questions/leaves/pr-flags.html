@@ -9,23 +9,11 @@
     Below are some of the more recent issues Angular.js has had unresolved. Feel free to search
     for any issues you find interesting and explore.
   </p>
-  <div>
-    <input ng-model="query" placeholder="Search for issues:">
-  </div>
+  <input ng-model="query" placeholder="Search for issues:">
   <div>
     <ul>
-      <li ng-repeat="issue in issues | filter:query">
-        <span><a ng-href="{{issue['html_url']}}">{{issue['title']}}</a></span>
-        <div>
-          Labels:
-          <div ng-show="!issues[$index].labels.length">
-            This issue has no labels, learn more about triaging issues
-            <a ng-href="#questions/help-triage">here.</a>
-          </div>
-          <a ng-repeat='label in issues[$index].labels'>
-            <div ng-bind="label.name"></div>
-          </a>
-        </div>
+      <li ng-repeat="issue in prFlagsCtrl.results | filter:query">
+        <div ng-include src="'questions/partials/github-list.html'"></div>
       </li>
     </ul>
   </div>
