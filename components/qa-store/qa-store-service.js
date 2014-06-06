@@ -49,7 +49,7 @@ angular.module('qaStore').
     helpMakeComponents = {
       url: 'help-make-components',
       backUrl: 'i-want-to-help',
-      choices: [helpShareComponents, helpShareComponents],
+      choices: [helpShareComponents, helpSupportComponents],
       question: 'I want to help make components for Angular.'
     };
     helpImproveAngular = {
