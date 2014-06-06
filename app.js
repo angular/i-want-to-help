@@ -1,5 +1,5 @@
 angular.module('helpApp',
-  ['qaStore','ngRoute','haQuestions','haPrFlags', 'haShareResources', 'haSupportComponents']).
+  ['dataFetch', 'qaStore','ngRoute','haQuestions','haPrFlags', 'haShareResources', 'haSupportComponents']).
     config(['$routeProvider', function($routeProvider) {
       $routeProvider.when('/questions/help-share-components', {
         controller: 'SupportComponentsController',
@@ -15,7 +15,7 @@ angular.module('helpApp',
         templateUrl: 'questions/leaves/pr-flags.html'
       }).
       when('/questions/help-triage', {
-        templateUrl: 'questions/leaves/help-triage.html'
+        templateUrl: 'questions/triage/help-triage.html'
       }).
       when('/questions/help-share-resources', {
         controller: 'ShareResourcesController',
