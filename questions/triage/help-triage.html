@@ -1,2 +1,16 @@
-<!-- {{triageCtrl.result}} -->
-<div ng-include="'partials/github-list.html"></div>
+<h1>I Can Help Triage Issues</h1>
+<div>
+  <p>
+
+  </p>
+  <p>
+  </p>
+  <input ng-model="query" placeholder="Search for issues:">
+  <div>
+    <ul>
+      <li ng-repeat="issue in triageCtrl.results | filter:query">
+        <div ng-include src="'questions/partials/github-list.html'"></div>
+      </li>
+    </ul>
+  </div>
+</div>

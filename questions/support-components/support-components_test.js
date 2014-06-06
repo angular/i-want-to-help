@@ -15,7 +15,7 @@ describe('haSupportComponents', function() {
     });
 
 
-    ddescribe('.currentComponent', function() {
+    describe('.currentComponent', function() {
 
       it('should set currentComponent to provided component', function() {
         var component = {isComponent:true};
