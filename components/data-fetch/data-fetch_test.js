@@ -19,8 +19,7 @@ describe('dataFetch', function(){
   describe('dataFetchService', function() {
     describe('.fetchData()', function() {
       it('should retrieve data from a specified url', function() {
-        $httpBackend.when('GET', url).respond({data: 'data'});
-        $httpBackend.expectGET(url);
+          $httpBackend.expectGET(url);
         var dataReceived = dataFetchService.fetchData(url);
         $httpBackend.flush();
       });
