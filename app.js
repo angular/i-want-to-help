@@ -7,7 +7,9 @@ angular.module('helpApp',
           controllerAs: 'supComponentsCtrl',
           templateUrl: 'questions/leaves/share-components.html'
         }).
-        when('/questions/help-support-components', {
+        when('/questions/help-support-components/:componentCat?/:subComponentCat?', {
+          controller: 'SupportComponentsController',
+          controllerAs: 'supComponentsCtrl',
           templateUrl: 'questions/leaves/support-components.html'
         }).
         when('/questions/help-pr-flags', {
@@ -38,5 +40,3 @@ angular.module('helpApp',
         }).
         otherwise('/questions');
   }]);
-
-

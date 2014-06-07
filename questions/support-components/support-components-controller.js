@@ -1,76 +1,90 @@
 angular.module('haSupportComponents').
-controller('SupportComponentsController',[function() {
-  this.componentCategories_ = [
+controller('SupportComponentsController',['$routeParams', function($routeParams) {
+  this.componentCategories = [
     {
       name: 'Complementary Libraries',
+      haUrl: 'complementary-libraries',
       subComponentsCategories: [
       {
         name: 'Internationalization - i18n',
+        haUrl: 'internationalization-i18n',
         subComponents: [
         {
-          name: 'angular-translate',
+          name: 'Angular-translate',
           url: 'http://angular-translate.github.io/',
-          description: '',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae,\
+            blanditiis, itaque totam rerum iusto quidem earum repellendus perferendis ad pariatur\
+            unde eaque ut nisi architecto reiciendis amet corrupti quaerat similique.',
         },
         {
-          name: 'angular-gettext',
+          name: 'Angular-gettext',
           url: 'http://angular-gettext.rocketeer.be/',
-          description: '',
+          description: 'Ipsam, amet corporis veritatis rem facere consequatur possimus.\
+            Et, nihil blanditiis doloribus velit repudiandae deleniti. Aut qui quod\
+            officiis veritatis veniam fugiat.',
         }
         ]
       },
       {
         name: 'RESTful Services',
+        haUrl: 'restful-services',
         subComponents: [
         {
           name: 'Restangular',
           url: 'https://github.com/mgonto/restangular',
-          description: '',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, esse!',
         }
         ]
       },
       {
         name: 'SQL and NoSQL Backends',
+        haUrl: 'sql-and-nosql',
         subComponents: [
         {
           name: 'BreezeJS',
           url: 'http://www.breezejs.com/',
-          description: '',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit,\
+          tempore, voluptate ex quisquam soluta nihil ullam quidem quaerat odio labore!',
         },
         {
           name: 'AngularFire',
           url: 'http://angularfire.com/',
-          description: '',
+          description: 'Lorem ipsum dolor sit.',
         }
         ]
       },
       {
         name: 'UI Widgets',
+        haUrl: 'ui-widgets',
         subComponents: [
         {
           name: 'KendoUI',
           url: 'http://kendo-labs.github.io/angular-kendo/#/',
-          description: '',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam.',
         },
         {
           name: 'UI Bootstrap',
           url: 'http://angular-ui.github.io/bootstrap/',
-          description: '',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae\
+          quae assumenda natus.',
         },
         {
           name: 'Wijmo',
           url: 'http://wijmo.com/tag/angularjs-2/',
-          description: ''
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
         }
         ]
       },
       {
         name: 'Advanced Routing',
+        haUrl: 'advanced-routing',
         subComponents: [
         {
           name: 'UI-Router',
           url: 'https://github.com/angular-ui/ui-router',
-          description: '',
+          description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, nobis,\
+            temporibus, nostrum eveniet tempora rerum veritatis alias cupiditate quidem at\
+            voluptates quaerat quibusdam!',
         }
         ]
       }
@@ -78,39 +92,44 @@ controller('SupportComponentsController',[function() {
     },
     {
       name: 'Tools',
+      haUrl: 'tools',
       subComponentsCategories: [
         {
           name: 'Debugging',
+          haUrl: 'debugging',
           subComponents: [
           {
             name: 'Batarang',
             url: 'https://github.com/angular/angularjs-batarang',
-            description: ''
+            description: 'Lorem ipsum dolor sit amet.'
           }
           ]
         },
         {
           name: 'Testing',
+          haUrl: 'testing',
           subComponents: [
             {
               name: 'Karma',
               url: 'http://karma-runner.github.io/',
-              description: '',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.\
+              Vel, nobis deserunt!',
             },
             {
               name: 'Protractor',
               url: 'https://github.com/angular/protractor',
-              description: '',
+              description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.',
             }
           ]
         },
         {
           name: 'Workflow',
+          haUrl: 'workflow',
           subComponents: [
             {
               name: 'Yeoman.io',
               url: 'https://github.com/yeoman/generator-angular',
-              description: '',
+              description: 'Lorem ipsum dolor sit.',
             }
           ]
         }
@@ -118,22 +137,46 @@ controller('SupportComponentsController',[function() {
     }
   ]
 
-  this.__defineSetter__('currentComponent', function(component) {
-    if(typeof component !== "object"){
-      throw new Error("currentComponent must be set to an object; set to: "+ typeof component)
+  this.__defineSetter__('currentComponent', function(componentUrl) {
+    if(typeof componentUrl !== "string"){
+      throw new Error('currentComponent must be given a string, given: '+ typeof componentUrl)
     }
-    this._currentComponent = component;
+    var url = $routeParams.componentCat || componentUrl;
+    this.componentCategories.forEach(function(comp) {
+      if (comp.haUrl == url){
+        this._currentComponent = comp;
+      }
+    }.bind(this))
   });
 
   this.__defineGetter__('currentComponent', function() {
     return this._currentComponent;
   })
 
-  this._currentComponent = this.componentCategories_[0];
+  var _currentSubComponent;
+
+  this.__defineSetter__('currentSubComponent', function(componentUrl) {
+    if(typeof componentUrl !== "string"){
+      throw new Error("currentSubComponent must be given a string, given: "+ typeof componentUrl)
+    }
+
+    this._currentComponent.subComponentsCategories.forEach(function(subComp) {
+      if (subComp.haUrl == componentUrl){
+        _currentSubComponent = subComp;
+      }
+    }.bind(this))
+  });
+
+  this.__defineGetter__('currentSubComponent', function() {
+    return _currentSubComponent;
+  })
+
+  this.currentComponent = $routeParams.componentCat || this.componentCategories[0].haUrl;
+
+  this.currentSubComponent =
+    $routeParams.subComponentCat || this._currentComponent.subComponentsCategories[0].haUrl;
+
 }])
-
-
-
 
 
 

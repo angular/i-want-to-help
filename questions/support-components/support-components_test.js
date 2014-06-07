@@ -1,5 +1,5 @@
 describe('haSupportComponents', function() {
-  beforeEach(module('haSupportComponents'));
+  beforeEach(module('haSupportComponents','ngRoute'));
   describe('SupportComponentsController', function() {
     var $controller, ctrl;
     beforeEach(inject(function(_$controller_){
@@ -14,7 +14,6 @@ describe('haSupportComponents', function() {
       expect(Array.isArray(componentCategories[0].subComponentsCategories)).toBe(true);
     });
 
-
     describe('.currentComponent', function() {
 
       it('should set currentComponent to provided component', function() {
@@ -26,8 +25,25 @@ describe('haSupportComponents', function() {
       it('should throw if not an object', function() {
         expect(function() {
           ctrl.currentComponent = 'not an object';
-        }).toThrow('currentComponent must be set to an object; set to: string');
+        }).toThrow('currentComponent must be given a string, given: object');
       })
+    });
+
+    ddescribe('.currentSubComponent', function() {
+
+      it('should throw if not given a string', function() {
+        expect(function() {
+          ctrl.currentSubComponent = {isString:false};
+        }).toThrow('currentSubComponent must be given a string, given: object');
+      })
+
+      it('should set currentSubComponent to provided subComponent by', function() {
+        ctrl = $controller('SupportComponentsController',
+          {$routeParams:{subComponenCat:'restful-services'}});
+        ctrl.currentSubComponent = 'restful-services';
+        expect(ctrl.currentSubComponent.name).toBe('RESTful Services');
+      });
+
     });
   });
 

@@ -1,1 +1,35 @@
-support-components.html
+<div>
+  <p>
+    Getting involved with our team at Angular doesn't mean you can only contribute to Angular's open source. We have several components that Angular depends heavily upon. If you would like to contribute indirectly to us, check out some of these open source projects that interact with Angular.
+  </p>
+  <div>
+    <ul>
+      <li ng-repeat="compCat in supComponentsCtrl.componentCategories">
+        <a ng-href="#questions/help-support-components/{{compCat.haUrl}}">
+          {{compCat.name}}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <ul>
+      <li ng-repeat="subCompCat in supComponentsCtrl.currentComponent.subComponentsCategories">
+        <a ng-href="#questions/help-support-components/{{supComponentsCtrl.currentComponent.haUrl}}/{{subCompCat.haUrl}}">
+          {{subCompCat.name}}
+        </a>
+      </li>
+    </ul>
+    <ul>
+      <li ng-repeat="component in supComponentsCtrl.currentSubComponent.subComponents">
+        {{component.name}}:
+        <div>
+          {{component.description}}
+        </div>
+        <div>
+          Check out {{component.name}}'s github <a ng-href="{{component.url}}">here</a>.
+        </div>
+        <hr>
+      </li>
+    </ul>
+  </div>
+</div>
