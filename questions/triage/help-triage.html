@@ -1,15 +1,139 @@
 <h1>I Can Help Triage Issues</h1>
 <div>
   <p>
+    Developers who use Angular helpfully submit issues to Github. However, it can be hard to sort through this information. The triaging process assigns labels to issues to help the Angular core team address these problems. This page contains a description of the triaging process, as well as a list of currently non triaged issues. If you would like to help with triaging, please contact a member of the angular core team to complete training as well.
+  </p>
+  <h2>How to Triage</h2>
+  <p> This process is based on the idea of minimizing user pain from this <a href="http://www.lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html"> blog post. </a></p>
 
-  </p>
-  <p>
-  </p>
+  <ol>
+    <li> Open the list of non triaged issues</li>
+    <ul>
+        <li>Sort by submit date, with the newest issues first</li>
+        <li>You don't have to do issues in order; feel free to pick and choose issues as you please.</li>
+        <li>You can triage older issues as well</li>
+        <li>Triage to your heart's content</li>
+    </ul>
+    <li>Assign yourself: Pick an issue that is not assigned to anyone and assign it to you</li>
+    <li>Understandable? - verify if the description of the request is clear.
+      <ul>
+        <li>If not, close it according to the instructions below and go to the last step.</li>
+      </ul>
+    </li>
+    <li>Duplicate?
+      <ul>
+        <li>If you've seen this issue before close it, and go to the last step.
+        </li>
+        <li>Check if there are comments that link to a dupe. If so verify that this is indeed a dupe, close it, and go to the last step.
+        </li>
+      </ul>
+    </li>
+    <li>
+      Bugs:
+      <ul>
+        <li>
+          Label Type: Bug
+        </li>
+        <li>
+          Reproducible? - Steps to reproduce the bug are clear. If they are not,
+        </li>
+        <li>
+          Reproducible on master? - http://code.angularjs.org/snapshot/
+        </li>
+      </ul>
+    </li>
+    <li>
+      Non bugs:
+      <ul>
+        <li>
+          Label Type: Feature, Type: Chore, or Type: Perf
+        </li>
+        <li>
+          Belongs in core? – Often new features should be implemented as a third-party module rather than an addition to the core. If this doesn't belong, close it, and go to the last step.
+        </li>
+        <li>
+          Label needs: breaking change - if needed
+        </li>
+        <li>
+          Label needs: public api - if the issue requires introduction of a new public API
+        </li>
+      </ul>
+    </li>
+    <li>
+      Label browser: * - if the issue only affects a certain browser
+    </li>
+    <li>
+      Label frequency: * – How often does this issue come up? How many developers does this affect?
+        <ul>
+          <li>
+            low - obscure issue affecting a handful of developers
+          </li>
+          <li>
+            moderate - impacts a common usage pattern
+          </li>
+          <li>
+            high - impacts most or all Angular apps
+          </li>
+          <li>
+            Label severity: * - How bad is the issue?
+          </li>
+          <li>
+            security issue
+          </li>
+          <li>
+            regression
+          </li>
+          <li>
+            memory leak
+          </li>
+          <li>
+            broken expected use - it's hard or impossible for a developer using Angular to accomplish something that Angular should be able to do
+          </li>
+          <li>
+            confusing - unexpected or inconsistent behavior; hard-to-debug
+          </li>
+          <li>
+            inconvenience - causes ugly/boilerplate code in apps
+          </li>
+        </ul>
+      </li>
+    <li>
+      Label component: *
+      <ul>
+        In rare cases, it's ok to have multiple components.
+      </ul>
+    </li>
+    <li>
+      Label PRs plz! - These issues are good targets for PRs from the open source community. Apply to issues where the problem and solution are well defined in the comments, and it's not too complex.
+    </li>
+    <li>
+      Label origin: google for issues from Google
+    </li>
+    <li>
+      Assign a milestone:
+      <ul>
+        <li>
+          Backlog - triaged fixes and features, should be the default choice
+        </li>
+        <li>
+          Current 1.x.y milestone (e.g. 1.3.0-beta-2) - regressions and urgent bugs only
+        </li>
+        <li>
+          Unassign yourself from the issue
+        </li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2>Current Non Triaged Issues</h2>
   <input ng-model="query" placeholder="Search for issues:">
   <div>
     <ul>
       <li ng-repeat="issue in triageCtrl.results | filter:query">
-        <div ng-include src="'questions/partials/github-list.html'"></div>
+        <!-- <div ng-include src="'questions/partials/github-list.html'"></div> -->
+        <span>
+          <a ng-href="{{issue['html_url']}}">{{issue['title']}}</a>
+        </span>
       </li>
     </ul>
   </div>
