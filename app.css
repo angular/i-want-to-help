@@ -89,11 +89,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .docs-search {
-  margin:10px 0;
-  padding:4px 0 4px 20px;
-  background:white;
-  border-radius:20px;
-  vertical-align:middle;
+  margin:10px 0 !important;
+  padding:4px 0 4px 20px !important;
+  background:white !important;
+  border-radius:20px !important;
+  border:solid 1px;
+  vertical-align:middle !important;
 }
 
 .docs-search > .search-query {
@@ -103,9 +104,9 @@ h1,h2,h3,h4,h5,h6 {
   color:#555;
 }
 
-.docs-search > .search-icon {
-  font-size:15px;
-  margin-right:10px;
+.search-icon {
+  font-size:12px;
+  margin-right:-25px;
 }
 
 .docs-search > .search-query:focus {

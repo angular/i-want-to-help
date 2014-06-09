@@ -10,7 +10,10 @@
     Below are some of the more recent issues Angular.js has had unresolved. Feel free to search
     for any issues you find interesting and explore.
   </p>
-  <input ng-model="query" placeholder="Search for issues:">
+  <div>
+    <span class="glyphicon glyphicon-search search-icon"></span>
+    <input class="docs-search" ng-model="query" placeholder=" Search for issues">
+  </div>
   <div>
     <ul>
       <li ng-repeat="issue in prFlagsCtrl.results | filter:query">
