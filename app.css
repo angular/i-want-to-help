@@ -10,6 +10,10 @@ html, body {
   margin-left: 1% !important;
 }
 
+.paddingTop {
+  margin-top: 5%;
+}
+
 #wrapper {
   min-height:100%;
   position:relative;
@@ -52,9 +56,18 @@ html, body {
 }
 */
 
-.title{
+.title {
   margin-top: -5px;
+}
+
+.noLink {
   color: white;
+  text-decoration: none;
+}
+
+a.noLink:hover {
+  color: #999 !important;
+  text-decoration: none !important;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -524,12 +537,13 @@ h4 {
   padding-top:20px;
 }
 
-.btn {
+.ang-btn {
   color:#428bca;
   position: relative;
   width: auto;
   display: inline-block;
-  margin: 0 0 2px;
+  margin: 0 0 -6px;
+  padding: 4px;
   overflow: hidden;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 4px;
@@ -551,10 +565,11 @@ h4 {
   margin-left:10px;
 }
 
-.btn:hover {
+.ang-btn:hover {
   color:black!important;
   border: 1px solid #ddd!important;
   background:white!important;
+  text-decoration: none !important
 }
 
 .view-source, .improve-docs {

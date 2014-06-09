@@ -1,21 +1,27 @@
 <h1>I can help share resources that helped me to learn Angular</h1>
 
-<p>Help update and maintain this list of resources for learning Angular. <a href="https://github.com/angular/i-want-to-help/pulls">Submit a pull request on Github</a></p>
-<div>
-  Filter by type:
-  <select ng-model="shareResourcesCtrl.type" ng-options="type for type in shareResourcesCtrl.types"></select>
+<a href="https://github.com/angular/i-want-to-help/pulls" class="btn improve-docs">
+  <span class="glyphicon glyphicon-edit"></span>
+  Improve this doc
+</a>
+
+<div class="container paddingTop">
+  <div>
+    Filter by type:
+    <select class="ang-btn" ng-model="shareResourcesCtrl.type" ng-options="type for type in shareResourcesCtrl.types"></select>
+  </div>
+  <table class="table table-striped table-bordered table-condensed paddingTop">
+    <tr>
+      <td>Name</td>
+      <td>Description</td>
+      <td>Type</td>
+      <td>Rating</td>
+    </tr>
+    <tr ng-model="shareResourcesCtrl.type" ng-repeat="link in shareResourcesCtrl.links | filter: shareResourcesCtrl.type">
+      <td><a href="{{link.href}}">{{link.name}}</a></td>
+      <td>{{link.description}}</td>
+      <td>{{link.type[0]}}</td>
+      <td>{{link.rating}}</td>
+    </tr>
+  </table>
 </div>
-<table>
-  <tr>
-    <td>Name</td>
-    <td>Description</td>
-    <td>Type</td>
-    <td>Rating</td>
-  </tr>
-  <tr ng-model="shareResourcesCtrl.type" ng-repeat="link in shareResourcesCtrl.links | filter: shareResourcesCtrl.type">
-    <td><a href="{{link.href}}">{{link.name}}</a></td>
-    <td>{{link.description}}</td>
-    <td>{{link.type[0]}}</td>
-    <td>{{link.rating}}</td>
-  </tr>
-</table>
