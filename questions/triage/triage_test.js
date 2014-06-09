@@ -19,8 +19,7 @@ describe('haTriage', function() {
       it('should return a valid response object', inject(function($timeout) {
         var ctrl = $controller('TriageController', {dataFetchService: mockDataFetchService});
         ctrl.getTriageList();
-        $timeout.flush();
-        console.log('Result: ' + ctrl.result);
+        $timeout.flush();ß
         expect(ctrl.results).toBe('Resolve');
       }));
     });

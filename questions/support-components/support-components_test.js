@@ -1,6 +1,6 @@
 describe('haSupportComponents', function() {
   beforeEach(module('haSupportComponents','ngRoute'));
-  describe('SupportComponentsController', function() {
+  ddescribe('SupportComponentsController', function() {
     var $controller, ctrl;
     beforeEach(inject(function(_$controller_) {
       $controller = _$controller_;
@@ -17,15 +17,15 @@ describe('haSupportComponents', function() {
     describe('.currentComponent', function() {
 
       it('should set currentComponent to provided component', function() {
-        //var component = {isComponent:true};
-        var component = "componentUrl";
-        ctrl.currentComponent = component;
-        expect(ctrl.currentComponent).toEqual(component);
+        var components = [{haUrl:'right-url'},{haUrl:'wrong-url'}];
+        ctrl.componentCategories = components;
+        ctrl.currentComponent = 'right-url';
+        expect(ctrl.currentComponent).toEqual({haUrl:'right-url'});
       });
 
-      it('should throw if not an object', function() {
+      it('should throw if not given a string', function() {
         expect(function() {
-          ctrl.currentComponent = 'not an object';
+          ctrl.currentComponent = {isString:true};
         }).toThrow('currentComponent must be given a string, given: object');
       })
     });
