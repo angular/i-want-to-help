@@ -19,10 +19,20 @@
     <script src="questions/triage/triage.js"></script>
     <script src="questions/triage/triage-controller.js"></script>
     <script src="app.js"></script>
-    <link rel="stylesheet" src="app.css">
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   </head>
   <body>
-    <div ng-view>
-    </div>
+    <header class="header navbar navbar-inverse docs-navbar-primary">
+        <div class="container">
+            <div class="row">
+                    <a class="brand navbar-brand" href="http://angularjs.org">
+                        <img class="logo" src="bower_components/bootstrap/assets/angularjs-for-header-only.svg">
+                    </a>
+                    <h4 class="text-center title">I want to help</h4>
+            </div>
+        </div>
+    </header>
+    <div ng-view></div>
   </body>
 </html>
