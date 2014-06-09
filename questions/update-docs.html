@@ -2,20 +2,43 @@
 
 <p>Angular's Documentation can be easily updated by the following process:</p>
 
-<p>Identify a small change in the documentation. Click the friendly blue "Improve this doc" button at the top right of the doc page to fork the repository in-place and make a quick change on the fly.</p>
+<p>Identify a small change in the documentation. Click the friendly blue
+  <a class="ang-btn">
+    <span class="glyphicon glyphicon-edit"></span>
+    Improve this doc
+  </a>
+  button at the top right of the doc page to fork the repository in-place and make a quick
+  change on the fly.
+</p>
 
-<p> OR </p>
+<h2> Or </h2>
 
-<p>Identify a larger fix in the documentation. To minimize duplication, go to the issue queue for <a href="https://github.com/angular/angular.js/issues?milestone=24&state=open" target="_blank">Milestone:Docs Only</a>Comment on an issue to let others know what you're working on, or create a new issue if your work doesn't fit within the scope of any of the existing doc fix projects.</p>
+<ol>
+  <li>Identify a larger fix in the documentation.</li>
+  <li>To minimize duplication, go to the issue queue for
+    <a href="https://github.com/angular/angular.js/issues?milestone=24&state=open" target="_blank">
+      Milestone:Docs Only
+    </a>.
+  </li>
+  <li>Comment on an issue to let others know what you're working on, or create a new issue if your
+  work doesn't fit within the scope of any of the existing doc fix projects.</li>
+  <li>Checkout a new git branch and work on a change. Make a commit of the format
+  "docs(&lt;scope of changes&gt;): &lt; description of changes in the imperative not beginning in
+  capital letter or ending in period and less than 100 characters &gt;". See the
+  <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md#-git-commit-guidelines">
+  Git Commit Guidelines</a> for more information.
+  </li>
+  <li>
+    Then
+    <a href="https://docs.angularjs.org/misc/contribute" target="_blank">build and test</a>
+    the documentation using "grunt test". Be sure you haven't accidentally introduced any layout
+    or formatting issues.
+  </li>
+  <li>Push your branch to GitHub with "git push origin &lt;branch-name&gt;"</li>
+  <li>If changes are suggested, make the updates, re-run the test suite. Then rebase and force push
+  to your GitHub repository.</li>
+  <li>Last, be proud that you have improved the documentation for all Angular developers!</li>
+</ol>
 
-<p>Checkout a new git branch and work on a change. Make a commit of the format "docs(&lt;scope of changes&gt;): &lt; description of changes in the imperative not beginning in capital letter or ending in period and less than 100 characters &gt;". Then <a href="https://docs.angularjs.org/misc/contribute" target="_blank">build and test</a> the documentation using "grunt test". Be sure you haven't accidentally introduced any layout or formatting issues.</p>
-
-<p>Push your branch to GitHub with "git push origin &lt;branch-name&gt;"</p>
-
-<p>Push your branch to GitHub with "git push origin &lt;branch-name&gt;"</p>
-
-<p>If changes are suggested, make the updates, re-run the test suite, and rebase and force push to your GitHub repository.</p>
-
-<p>Be proud that you have improved the documentation for all Angular developers!</p>
-
-<p>See the <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md" target="_blank">Contributing Guidelines</a> for more information. </p>
+<p>See the <a href="https://github.com/angular/angular.js/blob/master/CONTRIBUTING.md" target="_blank">
+Contributing Guidelines</a> for more information. </p>
