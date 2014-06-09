@@ -5,17 +5,17 @@ angular.module('helpApp',
         $routeProvider.when('/questions/help-share-components', {
           controller: 'SupportComponentsController',
           controllerAs: 'supComponentsCtrl',
-          templateUrl: 'questions/leaves/share-components.html'
+          templateUrl: 'questions/share-components.html'
         }).
         when('/questions/help-support-components/:componentCat?/:subComponentCat?', {
           controller: 'SupportComponentsController',
           controllerAs: 'supComponentsCtrl',
-          templateUrl: 'questions/leaves/support-components.html'
+          templateUrl: 'questions/support-components/support-components.html'
         }).
         when('/questions/help-pr-flags', {
           controller: 'PrFlagsController',
           controllerAs: 'prFlagsCtrl',
-          templateUrl: 'questions/leaves/pr-flags.html'
+          templateUrl: 'questions/pr-flags/pr-flags.html'
         }).
         when('/questions/help-triage', {
           controller: 'TriageController',
@@ -28,10 +28,10 @@ angular.module('helpApp',
           templateUrl: 'questions/share-resources/share-resources.html'
         }).
         when('/questions/help-update-tutorial', {
-          templateUrl: 'questions/leaves/update-tutorial.html'
+          templateUrl: 'questions/update-tutorial.html'
         }).
         when('/questions/help-update-docs', {
-          templateUrl: 'questions/leaves/update-docs.html'
+          templateUrl: 'questions/update-docs.html'
         }).
         when('/questions/:url', {
           controller: 'QuestionsController',

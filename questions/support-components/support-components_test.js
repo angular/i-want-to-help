@@ -2,7 +2,7 @@ describe('haSupportComponents', function() {
   beforeEach(module('haSupportComponents','ngRoute'));
   describe('SupportComponentsController', function() {
     var $controller, ctrl;
-    beforeEach(inject(function(_$controller_){
+    beforeEach(inject(function(_$controller_) {
       $controller = _$controller_;
       ctrl = $controller('SupportComponentsController', {});
     }));
@@ -17,9 +17,10 @@ describe('haSupportComponents', function() {
     describe('.currentComponent', function() {
 
       it('should set currentComponent to provided component', function() {
-        var component = {isComponent:true};
+        //var component = {isComponent:true};
+        var component = "componentUrl";
         ctrl.currentComponent = component;
-        expect(ctrl.currentComponent).toEqual({isComponent:true});
+        expect(ctrl.currentComponent).toEqual(component);
       });
 
       it('should throw if not an object', function() {
@@ -29,7 +30,7 @@ describe('haSupportComponents', function() {
       })
     });
 
-    ddescribe('.currentSubComponent', function() {
+    describe('.currentSubComponent', function() {
 
       it('should throw if not given a string', function() {
         expect(function() {
