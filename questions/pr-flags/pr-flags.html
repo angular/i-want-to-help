@@ -11,12 +11,21 @@
     for any issues you find interesting and explore.
   </p>
   <div>
+    <div class="btn-group">
+      <label>Search common type:</label>
+      <button ng-click="prFlagsCtrl.query = 'gh: issue'">gh: issue</button>
+      <button ng-click="prFlagsCtrl.query = 'severity: regression'">severity: regression</button>
+      <button ng-click="prFlagsCtrl.query = 'type: docs'">type: docs</button>
+      <button ng-click="prFlagsCtrl.query = 'high priority'">high priority</button>
+    </div>
+    <div>
     <span class="glyphicon glyphicon-search search-icon"></span>
-    <input class="docs-search" ng-model="query" placeholder=" Search for issues">
+    <input class="docs-search" ng-model="prFlagsCtrl.query" placeholder=" Search for issues ">
+    </div>
   </div>
   <div>
     <ul>
-      <li ng-repeat="issue in prFlagsCtrl.results | filter:query">
+      <li ng-repeat="issue in prFlagsCtrl.results | filter: prFlagsCtrl.query">
         <!-- <div ng-include src="'questions/partials/github-list.html'"></div> -->
         <span>
           <a ng-href="{{issue['html_url']}}">{{issue['title']}}</a>
