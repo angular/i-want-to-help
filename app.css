@@ -3,24 +3,47 @@ html, body {
   height:100%;
 }
 
+a.active {
+  color:#666;
+  text-decoration:none;
+}
+
+a.active:hover {
+  color:#666;
+  text-decoration:none;
+}
+
+.inactive{
+  color:white;
+}
+
+a.inactive:hover{
+  color:#666 !important;
+  text-decoration:none !important;
+}
+
+.breadcrumb {
+  background-color:#333 !important;
+}
+
 .questions{
-  margin-top: 10%;
+  margin-top:10%;
 }
 
 .space {
-  margin-left: 1% !important;
+  margin-left:1% !important;
 }
 
 .pad {
-  margin-right: 1px !important;
+  margin-right:1px !important;
 }
 
 .tableTop {
-  margin-top: 1%;
+  margin-top:1%;
 }
 
 .marginTop {
-  margin-top: 6%;
+  margin-top:6%;
 }
 
 #wrapper {

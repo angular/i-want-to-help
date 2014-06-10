@@ -3,3 +3,18 @@
     <a href="#questions/{{choice.url}}" class="btn btn-default">{{choice.question}}</a>
   </div>
 </div>
+
+<div class="footer text-center">
+  <ol class="breadcrumb">
+    <li>
+      <a ng-show="questionsCtrl.question == 'I want to help with Angular.'" class="active">I want to help
+      </a>
+      <a ng-show="questionsCtrl.question != 'I want to help with Angular.'" class="inactive" href="#questions/i-want-to-help">I want to help
+      </a>
+    </li>
+    <li ng-show="questionsCtrl.question != 'I want to help with Angular.'">
+      <a class="active">What I want to help with
+      </a>
+    </li>
+   </ol>
+</div>
