@@ -96,6 +96,34 @@ a.inactive:hover{
   text-decoration: none;
 }
 
+li.children::before
+{
+  content: "" !important;
+  padding-top: 0;
+}
+
+.childList {
+  list-style: none;
+}
+
+.breadcrumb a {
+  color: white;
+}
+
+.active {
+  color: #999 !important;
+}
+
+.breadcrumb a:hover {
+  color: #999 !important;
+  text-decoration: none !important;
+}
+
+.breadcrumb {
+  background-color: #333 !important;
+  color: white !important;
+}
+
 a.noLink:hover {
   color: #999 !important;
   text-decoration: none !important;
