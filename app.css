@@ -15,6 +15,10 @@ html, body {
   margin-right: 1px !important;
 }
 
+.tableTop {
+  margin-top: 1%;
+}
+
 .marginTop {
   margin-top: 6%;
 }
