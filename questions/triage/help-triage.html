@@ -128,12 +128,12 @@
   <h2>Current Non Triaged Issues</h2>
   <div>
     <span class="glyphicon glyphicon-search search-icon"></span>
-    <input class="docs-search" ng-model="query" ng-change"triageCtrl.updateList(query)" placeholder="Search for issues">
-
+    <input class="docs-search" ng-model="query" ng-change"triageCtrl.updateList(triageCtrl.query)" placeholder=" Search for issues">
+    <p>Use whole words to request more results from server.</p>
   </div>
   <div>
     <ul>
-      <li ng-repeat="issue in triageCtrl.results | filter:query">
+      <li ng-repeat="issue in triageCtrl.results | filter:query" class="item-listing">
         <span>
           <a ng-href="{{issue['html_url']}}">{{issue.title}}</a>
         </span>

@@ -6,8 +6,8 @@ controller('SupportComponentsController',['$routeParams', function($routeParams)
       haUrl: 'complementary-libraries',
       subComponentsCategories: [
       {
-        name: 'Internationalization - i18n',
-        haUrl: 'internationalization-i18n',
+        name: 'Internationalization',
+        haUrl: 'internationalization',
         subComponents: [
         {
           name: 'Angular-translate',

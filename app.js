@@ -1,6 +1,6 @@
 angular.module('helpApp',
   ['dataFetch', 'qaStore','ngRoute','haQuestions','haPrFlags', 'haShareResources',
-    'haSupportComponents', 'haTriage']).
+    'haSupportComponents', 'haTriage','haAnimations']).
       config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/questions/help-share-components', {
           controller: 'SupportComponentsController',

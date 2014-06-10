@@ -20,12 +20,12 @@
     </div>
     <div>
       <span class="glyphicon glyphicon-search search-icon"></span>
-      <input class="docs-search" ng-model="prFlagsCtrl.query" ng-change="prFlagsCtrl.updateList(query)" placeholder="Search for issues ">
+      <input class="docs-search" ng-model="prFlagsCtrl.query" ng-change="prFlagsCtrl.updateList(prFlagsCtrl.query)" placeholder=" Search for issues ">
     </div>
   </div>
   <div>
     <ul>
-      <li ng-repeat="issue in prFlagsCtrl.results | filter: prFlagsCtrl.query">
+      <li ng-repeat="issue in prFlagsCtrl.results | filter: prFlagsCtrl.query" class="item-listing">
         <!-- <div ng-include src="'questions/partials/github-list.html'"></div> -->
         <span>
           <a ng-href="{{issue['html_url']}}">{{issue['title']}}</a>
