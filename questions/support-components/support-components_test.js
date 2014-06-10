@@ -1,6 +1,6 @@
 describe('haSupportComponents', function() {
   beforeEach(module('haSupportComponents','ngRoute'));
-  ddescribe('SupportComponentsController', function() {
+  describe('SupportComponentsController', function() {
     var $controller, ctrl;
     beforeEach(inject(function(_$controller_) {
       $controller = _$controller_;
