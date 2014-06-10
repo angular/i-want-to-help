@@ -7,6 +7,7 @@
   <p>
     Getting involved with our team at Angular doesn't mean you can only contribute to Angular's open source. We have several components that Angular depends heavily upon. If you would like to contribute indirectly to us, check out some of these open source projects that interact with Angular.
   </p>
+  <p>If you've been working on some of your own featrures to add to AngularJS, check out our pull request <a href="https://github.com/angular/i-want-to-help/pulls">page</a> on github.</p>
   <div>
     <ul>
       <li ng-repeat="compCat in supComponentsCtrl.componentCategories">
@@ -33,7 +34,7 @@
         <div>
           Check out {{component.name}}'s github <a ng-href="{{component.url}}">here</a>.
         </div>
-        <hr>
+        <hr ng-show="!$last">
       </li>
     </ul>
   </div>

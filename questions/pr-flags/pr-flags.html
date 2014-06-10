@@ -19,8 +19,8 @@
       <button ng-click="prFlagsCtrl.query = 'high priority'">high priority</button>
     </div>
     <div>
-    <span class="glyphicon glyphicon-search search-icon"></span>
-    <input class="docs-search" ng-model="prFlagsCtrl.query" placeholder="Search for issues ">
+      <span class="glyphicon glyphicon-search search-icon"></span>
+      <input class="docs-search" ng-model="prFlagsCtrl.query" ng-change="prFlagsCtrl.updateList(query)" placeholder="Search for issues ">
     </div>
   </div>
   <div>
@@ -31,12 +31,14 @@
           <a ng-href="{{issue['html_url']}}">{{issue['title']}}</a>
         </span>
         <div>
-          Labels:
-          <div ng-show="!prFlagsCtrl.results[$index].labels.length">
+          <ng-pluralize count="{{issue.labels.length}}"
+          when="{'0':'No Labels:','1':'Label:','other':'Labels:'}"></ng-pluralize>
+
+          <div ng-show="!issue.labels.length">
             This issue has no labels, learn more about triaging issues
             <a ng-href="#questions/help-triage">here.</a>
           </div>
-          <span ng-repeat='label in prFlagsCtrl.results[$index].labels'>
+          <span ng-repeat='label in issue.labels'>
             <div ng-bind="label.name"></div>
           </span>
         </div>

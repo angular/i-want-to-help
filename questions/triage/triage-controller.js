@@ -1,9 +1,17 @@
 angular.module('haTriage').
 controller('TriageController', ['dataFetchService', function(dataFetchService) {
-  this.getTriageList = function() {
-    dataFetchService.fetchTriage().then(function(gitHubResponse) {
-      this.results = gitHubResponse.data.items;
+  this.lastChangeTime = new Date().getTime();
+  this.getTriageList = function(query) {
+    dataFetchService.fetchTriage(query).then(function(gitHubResponse) {
+      this.results = dataFetchService.mergeAndRemoveDuplicates(gitHubResponse.data.items);
     }.bind(this));
   };
-  this.getTriageList();
+  this.updateList = function(query) {
+    var currentTime = new Date().getTime();
+    if(currentTime-this.lastChangeTime>250) {
+      this.getTriageList(query);
+      this.lastChangeTime = new Date().getTime();
+    }
+  }
+  this.getTriageList("");
 }]);
