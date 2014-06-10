@@ -133,11 +133,26 @@
   <div>
     <ul>
       <li ng-repeat="issue in triageCtrl.results | filter:query">
-        <!-- <div ng-include src="'questions/partials/github-list.html'"></div> -->
         <span>
           <a ng-href="{{issue['html_url']}}">{{issue['title']}}</a>
         </span>
       </li>
     </ul>
   </div>
+</div>
+
+<div class="footer text-center">
+  <ol class="breadcrumb">
+    <li>
+      <a class="inactive" href="#questions/i-want-to-help">I want to help
+      </a>
+    </li>
+    <li>
+      <a class="inactive" href="#questions/help-improve-angular">I want to help with Angular itself
+      </a>
+    </li>
+    <li>
+      <a class="active">I want to help triage</a>
+    </li>
+   </ol>
 </div>
