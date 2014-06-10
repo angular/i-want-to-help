@@ -3,6 +3,39 @@ html, body {
   height:100%;
 }
 
+/**
+* Visual progress indicator, badges and progress bar
+*/
+.treeBadge {
+  height: 50px;
+}
+
+.progressFirst {
+  width: 33% !important;
+}
+
+.progressSecond {
+  width: 66% !important;
+}
+
+.visual {
+  margin-top: 3%;
+}
+.visual li {
+  height: 50px;
+  list-style-type: none;
+}
+
+.visual .border {
+  border-style: inset !important;
+  border: 1px;
+  border-color: red;
+}
+
+/**
+* Style for breadcrumbs footer links
+*/
+
 a.active {
   color:#666;
   text-decoration:none;
@@ -26,6 +59,9 @@ a.inactive:hover{
   background-color:#333 !important;
 }
 
+/**
+* Style for questions buttons
+*/
 .questions{
   margin-top:10%;
 }
@@ -38,6 +74,9 @@ a.inactive:hover{
   margin-right:1px !important;
 }
 
+/**
+* Style for Share Resources Table
+*/
 .tableTop {
   margin-top:1%;
 }
