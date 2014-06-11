@@ -4,9 +4,8 @@
   <div class="btn-group questions span4 offset4 space" ng-repeat="choice in questionsCtrl.choices">
 
     <a href="#questions/{{choice.url}}" class="">
-      <img src="bootstrap/assets/ANgularJS-Shield-empty.png"/>
-    </a>
     <p>{{choice.question}}</p>
+    </a>
   </div>
 </div>
 
@@ -16,16 +15,6 @@
     </div>
   </div>
   <div class="text-center">
-  <ol class="breadcrumb">
-    <li>
-      <a ng-show="questionsCtrl.question == 'I want to help with Angular.'" class="active">I want to help
-      </a>
-      <a ng-show="questionsCtrl.question != 'I want to help with Angular.'" class="inactive" href="#questions/i-want-to-help">I want to help
-      </a>
-    </li>
-    <li ng-show="questionsCtrl.question != 'I want to help with Angular.'">
-      <a class="active">What I want to help with
-      </a>
-    </li>
-   </ol>
+    <ha-breadcrumbs breadcrumbs="questionsCtrl.crumbsArray"></ha-breadcrumbs>
+  </div>
 </div>

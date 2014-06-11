@@ -1,0 +1,5 @@
+<ol class="breadcrumb">
+    <li ng-repeat="crumb in breadcrumbs">
+      <a ng-class="{active: $last}" href="{{crumb.url}}">{{crumb.text}}</a>
+    </li>
+</ol>

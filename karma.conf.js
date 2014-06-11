@@ -8,6 +8,9 @@ module.exports = function(config) {
       'bower_components/angular/angular.js',
       'bower_components/angular-mocks/angular-mocks.js',
       'bower_components/angular-route/angular-route.js',
+      'components/breadcrumbs/breadcrumbs.js',
+      'components/breadcrumbs/breadcrumbs-directive.js',
+      'components/breadcrumbs/breadcrumbs_test.js',
       'components/data-fetch/data-fetch.js',
       'components/data-fetch/data-fetch-service.js',
       'components/data-fetch/data-fetch_test.js',
@@ -25,11 +28,14 @@ module.exports = function(config) {
       'questions/share-resources/share-resources_test.js',
       'questions/triage/triage.js',
       'questions/triage/triage-controller.js',
-      'questions/triage/triage_test.js'
+      'questions/triage/triage_test.js',
+      'components/**/*.html'
     ],
     exclude: [
     ],
-    preprocessors: undefined,
+    preprocessors: {
+      'components/**/*.html': ['ng-html2js']
+    },
     browsers: ['Chrome']
   });
 };
