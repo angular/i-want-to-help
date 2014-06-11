@@ -7,12 +7,10 @@ controller('TriageController', ['dataFetchService','$timeout', function(dataFetc
     }.bind(this));
   };
   this.updateList = function(query) {
-      currentPromises.push($timeout(function() {
-        this.getTriageList(query);
-      }.bind(this),500))
-      promsLen = currentPromises.length;
-      $timeout.cancel(currentPromises[promsLen-2]);
-      currentPromises.splice(0,promsLen-1);
-    }
+    $timeout.cancel(currentPromises);
+    currentPromises = $timeout(function() {
+      this.getTriageList(query);
+    }.bind(this),500)
+  }
   this.getTriageList("");
 }]);

@@ -1,5 +1,5 @@
 describe('haTriage', function() {
-  var $controller, mockDataFetchService;
+  var $controller, mockDataFetchService, dataFetchService;
   var url =
     'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
   beforeEach(module('haTriage', 'dataFetch'));
@@ -8,10 +8,14 @@ describe('haTriage', function() {
   }));
   beforeEach(inject(function(_dataFetchService_, $injector, $q) {
     dataFetchService = _dataFetchService_;
-    mockDataFetchService = {fetchTriage: function() {
+    mockDataFetchService = {
+      fetchTriage: function(query) {
           return $q.when({data: {items: 'Resolve'}});
-        }};
-    $httpBackend = $injector.get('$httpBackend');
+      },
+      mergeAndRemoveDuplicates: function(result) {
+        return "success";
+      }
+    };
   }));
 
   describe('triageController', function() {
@@ -19,8 +23,8 @@ describe('haTriage', function() {
       it('should return a valid response object', inject(function($timeout) {
         var ctrl = $controller('TriageController', {dataFetchService: mockDataFetchService});
         ctrl.getTriageList();
-        $timeout.flush();ß
-        expect(ctrl.results).toBe('Resolve');
+        $timeout.flush();
+        expect(ctrl.results).toBe('success');
       }));
     });
   });

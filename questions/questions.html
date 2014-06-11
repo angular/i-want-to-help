@@ -2,7 +2,11 @@
 
 <div class="text-center">
   <div class="btn-group questions span4 offset4 space" ng-repeat="choice in questionsCtrl.choices">
-    <a href="#questions/{{choice.url}}" class="btn btn-default">{{choice.question}}</a>
+
+    <a href="#questions/{{choice.url}}" class="">
+      <img src="bootstrap/assets/ANgularJS-Shield-empty.png"/>
+    </a>
+    <p>{{choice.question}}</p>
   </div>
 </div>
 

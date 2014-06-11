@@ -8,8 +8,11 @@ describe('haPrFlags', function() {
   beforeEach(inject(function(_$controller_, $injector, $q) {
     $controller = _$controller_;
     mockDataFetchService = {
-      fetchPR: function() {
+      fetchPR: function(query) {
         return $q.when({data: {items: 'Resolve'}});
+      },
+      mergeAndRemoveDuplicates: function(result) {
+        return "success";
       }
     };
   }));
@@ -20,8 +23,7 @@ describe('haPrFlags', function() {
         var ctrl = $controller('PrFlagsController', {dataFetchService: mockDataFetchService});
         ctrl.getPrList();
         $timeout.flush();
-        console.log('Result: ' + ctrl.result);
-        expect(ctrl.results).toBe('Resolve');
+        expect(ctrl.results).toBe('success');
       }));
     });
   });
