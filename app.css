@@ -3,6 +3,9 @@ html, body {
   height:100%;
 }
 
+body {
+  padding-bottom: 70px;
+}
 /**
 * Intro page
 */
@@ -15,6 +18,10 @@ html, body {
 */
 .treeBadge {
   height: 50px;
+}
+
+.angularProgress {
+  margin: 5px !important;
 }
 
 .progressFirst {

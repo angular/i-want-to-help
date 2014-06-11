@@ -10,50 +10,12 @@
   </div>
 </div>
 
-<div class="text-center">
-  <div class="btn-group visual">
-    <div class="btn level1">
-      <ul>
-        <li></li>
-        <li></li>
-        <li ng-class="{border: questionsCtrl.question == 'I want to help with Angular.'}">
-          <img class="treeBadge" src="assets/img/AngularJS-Shield-medium.png" >
-        </li>
-    </div>
-    <div class="btn level2">
-      <ul>
-        <li></li>
-        <div ng-class="{border: questionsCtrl.question != 'I want to help with Angular.'}">
-          <li>
-            <img class="treeBadge" src="assets/img/AngularJS-Shield-medium.png" >
-          </li>
-          <li>
-            <img class="treeBadge" src="assets/img/AngularJS-Shield-medium.png">
-          </li>
-        </div>
-      </ul>
-    </div>
-    <div class="btn level3">
-      <ul>
-        <li>
-          <img class="treeBadge" class="treeBadge" src="assets/img/AngularJS-Shield-medium.png">
-        </li>
-        <li>
-          <img class="treeBadge" src="assets/img/AngularJS-Shield-medium.png">
-        </li>
-        <li>
-          <img class="treeBadge" src="assets/img/AngularJS-Shield-medium.png">
-        </li>
-      </ul>
-    </div>
-  </div>
-  <div class="progress">
+<div class="navbar-fixed-bottom">
+  <div class="progress angularProgress">
     <div class="progress-bar progress-bar-danger" role="progressbar" ng-class="{progressFirst: questionsCtrl.question == 'I want to help with Angular.', progressSecond: questionsCtrl.question != 'I want to help with Angular.'}">
     </div>
   </div>
-</div>
-
-<div class="footer text-center">
+  <div class="text-center">
   <ol class="breadcrumb">
     <li>
       <a ng-show="questionsCtrl.question == 'I want to help with Angular.'" class="active">I want to help
