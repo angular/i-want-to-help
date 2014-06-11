@@ -20,25 +20,25 @@ angular.module('qaStore').
       url: 'help-pr-flags',
       backUrl: 'help-improve-angular',
       choices: [],
-      question: 'I can help with PR flags.'
+      question: 'I can help with pull request flags on github.'
     };
     helpTriage = {
       url: 'help-triage',
       backUrl: 'help-improve-angular',
       choices: [],
-      question: 'I can help triage issues.'
+      question: 'I can help triage issues for Angular on github.'
     };
     helpShareResources = {
       url: 'help-share-resources',
       backUrl: 'help-other-devs',
       choices: [],
-      question: 'I can help share resources that helped me understand Angular.'
+      question: 'I can help share resources that help understand Angular.'
     };
     helpUpdateTutorial = {
       url: 'help-update-tutorial',
       backUrl: 'help-other-devs',
       choices: [],
-      question: 'I can help update Angular\'s tutorial.'
+      question: 'I can help update Angular\'s tutorial project.'
     };
     helpUpdateDocs = {
       url: 'help-update-docs',

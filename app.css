@@ -10,16 +10,16 @@ body {
 * Intro page
 */
 .introQuestion {
-  margin-top: 1%;
+  margin-top: 6%;
 }
 
 /**
 * Visual progress indicator, badges and progress bar
 */
 .questionText {
-  width: 200px;
+  width: 165px;
   margin-left: 30px;
-  margin-top: -175px;
+  margin-top: -165px;
   font-size: 20px;
   font-weight: 100;
   color: white;
