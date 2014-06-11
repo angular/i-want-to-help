@@ -1,11 +1,45 @@
 <h1>I Can Help Triage Issues</h1>
 <div>
   <p>
-    Developers who use Angular helpfully submit issues to Github. However, it can be hard to sort through this information. The triaging process assigns labels to issues to help the Angular core team address these problems. This page contains a description of the triaging process, as well as a list of currently non triaged issues. If you would like to help with triaging, please contact a member of the angular core team to complete training as well.
+    Developers who use Angular helpfully submit issues to Github. However, it can be hard to sort through this information. The triaging process assigns labels to issues to help the Angular core team address these problems. This page contains a list of currently non triaged issues as well as a description of the triaging process. If you would like to help with triaging, please contact a member of the angular core team to complete training as well.
   </p>
-  <h2>How to Triage</h2>
-  <p> This process is based on the idea of minimizing user pain from this <a href="//www.lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html"> blog post. </a></p>
+</div>
+<div>
+  <h2>Current Non Triaged Issues</h2>
+  <div>
+    <span class="glyphicon glyphicon-search search-icon"></span>
+    <input class="docs-search" ng-model="query" ng-change"triageCtrl.updateList(triageCtrl.query)" placeholder=" Search for issues">
+    <p>Use whole words to request more results from server.</p>
+  </div>
+  <div>
+    <ul>
+      <li ng-repeat="issue in triageCtrl.results | filter:query" class="item-listing">
+        <span>
+          <a ng-href="{{issue['html_url']}}">{{issue.title}}</a>
+        </span>
+      </li>
+    </ul>
+  </div>
+</div>
 
+<div class="navbar-fixed-bottom footer text-center">
+  <ol class="breadcrumb">
+    <li>
+      <a class="inactive" href="#questions/i-want-to-help">I want to help
+      </a>
+    </li>
+    <li>
+      <a class="inactive" href="#questions/help-improve-angular">I want to help with Angular itself
+      </a>
+    </li>
+    <li>
+      <a class="active">I want to help triage</a>
+    </li>
+   </ol>
+</div>
+<div>
+<h2>How to Triage</h2>
+  <p> This process is based on the idea of minimizing user pain from this <a href="//www.lostgarden.com/2008/05/improving-bug-triage-with-user-pain.html"> blog post. </a></p>
   <ol>
     <li> Open the list of non triaged issues</li>
     <ul>
@@ -124,36 +158,4 @@
       </ul>
     </li>
   </ol>
-
-  <h2>Current Non Triaged Issues</h2>
-  <div>
-    <span class="glyphicon glyphicon-search search-icon"></span>
-    <input class="docs-search" ng-model="query" ng-change"triageCtrl.updateList(triageCtrl.query)" placeholder=" Search for issues">
-    <p>Use whole words to request more results from server.</p>
-  </div>
-  <div>
-    <ul>
-      <li ng-repeat="issue in triageCtrl.results | filter:query" class="item-listing">
-        <span>
-          <a ng-href="{{issue['html_url']}}">{{issue.title}}</a>
-        </span>
-      </li>
-    </ul>
-  </div>
-</div>
-
-<div class="footer text-center">
-  <ol class="breadcrumb">
-    <li>
-      <a class="inactive" href="#questions/i-want-to-help">I want to help
-      </a>
-    </li>
-    <li>
-      <a class="inactive" href="#questions/help-improve-angular">I want to help with Angular itself
-      </a>
-    </li>
-    <li>
-      <a class="active">I want to help triage</a>
-    </li>
-   </ol>
 </div>
