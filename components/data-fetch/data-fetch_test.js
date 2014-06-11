@@ -1,11 +1,11 @@
 describe('dataFetch', function(){
   var dataFetchService, $httpBackend;
   var url =
-    'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
+    'https://api.github.com/search/issues?q=angular+angular.js+no:milestone+';
   var triageUrl =
-    'https://api.github.com/search/issues?q=angular+angular.js+user:angular+no:milestone';
+    'https://api.github.com/search/issues?q=angular+angular.js+no:milestone+';
   var pRUrl = 'https://api.github.com/search/'
-        + 'issues?q=angular+angular.js+user:angular&sort=created&per_page=25';
+        + 'issues?q=angular+angular.js+prs+plz+&sort=created&per_page=25';
 
   beforeEach(module('dataFetch'));
   beforeEach(inject(function(_dataFetchService_, $injector) {
@@ -32,7 +32,7 @@ describe('dataFetch', function(){
       it('should retrieve data from the triage url', function() {
         $httpBackend.when('GET', triageUrl).respond({data: 'triage'});
         $httpBackend.expectGET(triageUrl);
-        var dataReceived = dataFetchService.fetchTriage();
+        var dataReceived = dataFetchService.fetchTriage('');
         $httpBackend.flush();
       });
     });
@@ -41,9 +41,22 @@ describe('dataFetch', function(){
       it('should retrieve data from the PR url', function() {
         $httpBackend.when('GET', pRUrl).respond({data: 'triage'});
         $httpBackend.expectGET(pRUrl);
-        var dataReceived = dataFetchService.fetchPR();
+        var dataReceived = dataFetchService.fetchPR('');
         $httpBackend.flush();
       });
     });
+
+    describe('.mergeAndRemoveDuplicates', function() {
+      it('return a merged array with no duplicates', function() {
+        dataFetchService.prFetchData = {
+          b: {html_url:'b'},
+          d: {html_url:'d'}
+        }
+        var objToMerge = [{html_url: 'a'}, {html_url:'b'}, {html_url:'c'}];
+        var finalObj = [{html_url:'b'},{html_url:'d'},{html_url:'a'},{html_url:'c'}];
+        var result = dataFetchService.mergeAndRemoveDuplicates(objToMerge);
+        expect(result).toEqual(finalObj)
+      })
+    })
   });
 });
