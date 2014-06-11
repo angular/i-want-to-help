@@ -4,6 +4,13 @@ html, body {
 }
 
 /**
+* Intro page
+*/
+.introQuestion {
+  margin-top: 1%;
+}
+
+/**
 * Visual progress indicator, badges and progress bar
 */
 .treeBadge {

@@ -33,10 +33,13 @@ angular.module('helpApp',
         when('/questions/help-update-docs', {
           templateUrl: 'questions/update-docs.html'
         }).
+        when('/questions/intro', {
+          templateUrl: 'questions/intro.html'
+        }).
         when('/questions/:url', {
           controller: 'QuestionsController',
           controllerAs: 'questionsCtrl',
           templateUrl: 'questions/questions.html'
         }).
-        otherwise({redirectTo: '/questions/i-want-to-help'});
+        otherwise({redirectTo: '/questions/intro'});
   }]);
