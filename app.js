@@ -38,5 +38,5 @@ angular.module('helpApp',
           controllerAs: 'questionsCtrl',
           templateUrl: 'questions/questions.html'
         }).
-        otherwise('/questions');
+        otherwise({redirectTo: '/questions/i-want-to-help'});
   }]);
