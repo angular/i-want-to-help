@@ -1,11 +1,11 @@
 describe('dataFetch', function(){
   var dataFetchService, $httpBackend;
   var url =
-    'https://api.github.com/search/issues?q=angular+angular.js+no:milestone+';
+    'https://api.github.com/search/issues?q=angular+angular.js+no:milestone+user:angular+';
   var triageUrl =
-    'https://api.github.com/search/issues?q=angular+angular.js+no:milestone+';
+    'https://api.github.com/search/issues?q=angular+angular.js+no:milestone+user:angular+';
   var pRUrl = 'https://api.github.com/search/'
-        + 'issues?q=angular+angular.js+prs+plz+&sort=created&per_page=25';
+        + 'issues?q=angular+angular.js+prs+plz+user:angular+&sort=created&per_page=25';
 
   beforeEach(module('dataFetch'));
   beforeEach(inject(function(_dataFetchService_, $injector) {

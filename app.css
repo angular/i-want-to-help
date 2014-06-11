@@ -16,6 +16,15 @@ body {
 /**
 * Visual progress indicator, badges and progress bar
 */
+.questionText {
+  width: 200px;
+  margin-left: 30px;
+  margin-top: -175px;
+  font-size: 20px;
+  font-weight: 100;
+  color: white;
+
+}
 .treeBadge {
   height: 50px;
 }
@@ -81,7 +90,7 @@ a.inactive:hover{
 }
 
 .space {
-  margin-left:1% !important;
+  margin-left:3% !important;
 }
 
 .pad {
@@ -132,6 +141,19 @@ a.inactive:hover{
   border-radius:0!important;
   margin-bottom:0!important;
 }
+/*Style for issue labels*/
+.issue-label {
+  display: inline-block;
+  background-color: #f5f5f5;
+  padding: 4px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  color: #555;
+  border-radius: 2px;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,0.18);
+}
+
 
 /* Logo */
 /*.dropdown-menu {

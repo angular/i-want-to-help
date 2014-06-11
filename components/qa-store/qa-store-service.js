@@ -62,7 +62,7 @@ angular.module('qaStore').
       url: 'help-other-devs',
       backUrl: 'i-want-to-help',
       choices: [helpUpdateDocs, helpUpdateTutorial, helpShareResources],
-      question: 'I want to help other developers understand Angular.'
+      question: 'I want to help developers understand Angular.'
     };
     iWantToHelp = {
       url: 'i-want-to-help',

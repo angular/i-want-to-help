@@ -25,10 +25,10 @@
   </div>
   <div>
     <ul>
-      <li ng-repeat="issue in prFlagsCtrl.results | filter: prFlagsCtrl.query" class="item-listing">
+      <div ng-repeat="issue in prFlagsCtrl.results | filter: prFlagsCtrl.query" class="item-listing">
         <!-- <div ng-include src="'questions/partials/github-list.html'"></div> -->
         <span>
-          <a ng-href="{{issue['html_url']}}">{{issue['title']}}</a>
+          <h4><a ng-href="{{issue['html_url']}}">{{issue['title']}}</a></h4>
         </span>
         <div>
           <ng-pluralize count="{{issue.labels.length}}"
@@ -39,10 +39,10 @@
             <a ng-href="#questions/help-triage">here.</a>
           </div>
           <span ng-repeat='label in issue.labels'>
-            <div ng-bind="label.name"></div>
+            <div class="issue-label" ng-bind="label.name"></div>
           </span>
         </div>
-      </li>
+      </div>
     </ul>
   </div>
 </div>
