@@ -13,7 +13,8 @@ angular.module('dataFetch').
       };
       this.fetchPR = function(query) {
         var prUrl = 'https://api.github.com/search/'
-          +'issues?q=angular+angular.js+prs+plz+user:angular+'+encodeURI(query)+'&sort=created&per_page=25';
+          +'issues?labels=PRs%20plz%21&q=angular+'+encodeURI(query)+'&sort=created&per_page=25';
+        console.log(prUrl)
         var prResults = this.fetchData(prUrl);
         return prResults;
       };

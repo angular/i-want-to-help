@@ -5,7 +5,7 @@ describe('dataFetch', function(){
   var triageUrl =
     'https://api.github.com/search/issues?q=angular+angular.js+no:milestone+user:angular+';
   var pRUrl = 'https://api.github.com/search/'
-        + 'issues?q=angular+angular.js+prs+plz+user:angular+&sort=created&per_page=25';
+        + 'issues?labels=PRs%20plz%21&q=angular+&sort=created&per_page=25';
 
   beforeEach(module('dataFetch'));
   beforeEach(inject(function(_dataFetchService_, $injector) {
