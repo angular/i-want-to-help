@@ -2,12 +2,7 @@ angular.module('helpApp',
   ['dataFetch', 'qaStore','ngRoute', 'breadcrumbs', 'haQuestions','haPrFlags', 'haShareResources',
     'haSupportComponents', 'haTriage','haAnimations']).
       config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/questions/help-share-components', {
-          controller: 'SupportComponentsController',
-          controllerAs: 'supComponentsCtrl',
-          templateUrl: 'questions/share-components.html'
-        }).
-        when('/questions/help-support-components/:componentCat?/:subComponentCat?', {
+        $routeProvider.when('/questions/help-support-components/:componentCat?/:subComponentCat?', {
           controller: 'SupportComponentsController',
           controllerAs: 'supComponentsCtrl',
           templateUrl: 'questions/support-components/support-components.html'
