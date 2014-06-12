@@ -28,12 +28,6 @@ angular.module('qaStore').
       choices: [],
       question: 'I can help share resources that help understand Angular.'
     };
-    helpUpdateTutorial = {
-      url: 'help-update-tutorial',
-      backUrl: 'help-other-devs',
-      choices: [],
-      question: 'I can help update Angular\'s tutorial project.'
-    };
     helpUpdateDocs = {
       url: 'help-update-docs',
       backUrl: 'help-other-devs',
@@ -55,7 +49,7 @@ angular.module('qaStore').
     helpOtherDevs = {
       url: 'help-other-devs',
       backUrl: 'i-want-to-help',
-      choices: [helpUpdateDocs, helpUpdateTutorial, helpShareResources],
+      choices: [helpUpdateDocs, helpShareResources],
       question: 'I want to help developers understand Angular.'
     };
     iWantToHelp = {

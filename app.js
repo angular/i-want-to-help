@@ -22,9 +22,6 @@ angular.module('helpApp',
           controllerAs: 'shareResourcesCtrl',
           templateUrl: 'questions/share-resources/share-resources.html'
         }).
-        when('/questions/help-update-tutorial', {
-          templateUrl: 'questions/update-tutorial.html'
-        }).
         when('/questions/help-update-docs', {
           templateUrl: 'questions/update-docs.html'
         }).
