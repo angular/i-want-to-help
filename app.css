@@ -163,6 +163,8 @@ a.inactive:hover{
 
 .title {
   margin-top: -5px;
+  float:right;
+  font-weight: 100;
 }
 
 .noLink {
@@ -244,6 +246,11 @@ h1,h2,h3,h4,h5,h6 {
 
 .docs-search > .search-query:focus {
   outline:0;
+}
+/* Help Support Components Padding*/
+
+.offsetTab{
+  margin-left: 15px;
 }
 
 /* end: Logo */

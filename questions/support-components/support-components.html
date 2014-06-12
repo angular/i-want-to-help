@@ -23,7 +23,7 @@
         <div class="col-md-2">
           <ul class="nav nav-pills nav-stacked">
             <li ng-class="{active: supComponentsCtrl.currentSubComponent.haUrl == subCompCat.haUrl}" ng-repeat="subCompCat in supComponentsCtrl.currentComponent.subComponentsCategories">
-              <a ng-href="#questions/help-support-components/{{supComponentsCtrl.currentComponent.haUrl}}/{{subCompCat.haUrl}}">
+              <a class="offsetTab" ng-href="#questions/help-support-components/{{supComponentsCtrl.currentComponent.haUrl}}/{{subCompCat.haUrl}}">
                 {{subCompCat.name}}
               </a>
             </li>
