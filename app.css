@@ -14,20 +14,9 @@ body {
 }
 
 /**
-* Visual progress indicator, badges and progress bar
+* Visual progress indicator, progress bar
 */
-.questionText {
-  width: 165px;
-  margin-left: 28px;
-  margin-top: -165px;
-  font-size: 20px;
-  font-weight: 100;
-  color: white;
 
-}
-.treeBadge {
-  height: 50px;
-}
 .angularProgress {
   height: 15px !important;
   margin: 5px !important;
@@ -41,19 +30,6 @@ body {
   width: 66% !important;
 }
 
-.visual {
-  margin-top: 3%;
-}
-.visual li {
-  height: 50px;
-  list-style-type: none;
-}
-
-.visual .border {
-  border-style: inset !important;
-  border: 1px;
-  border-color: red;
-}
 
 /**
 * Style for breadcrumbs footer links
@@ -86,7 +62,26 @@ a.inactive:hover{
 * Style for questions buttons
 */
 .questions{
+<<<<<<< HEAD
   margin-top:14%;
+=======
+  height:100% !important;
+  margin-top:10%;
+  padding: 12% 0 !important;
+}
+
+.questionText {
+  width:165px;
+  margin-left:30px;
+  margin-top:-165px;
+  font-size:20px;
+  font-weight:100;
+  color:white;
+}
+
+.questions a{
+  padding: 20% 0 !important;
+>>>>>>> style(helpApp): update general application styling
 }
 
 .space {

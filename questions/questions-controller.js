@@ -2,7 +2,7 @@ angular.module('haQuestions').
 controller('QuestionsController', ['qaStoreService', '$routeParams', '$window',
     function(qaStoreService, $routeParams, $window) {
       var node = qaStoreService.getByUrl($routeParams.url);
-      if(node === undefined){
+      if(node === undefined) {
         $window.location.href = '#questions/i-want-to-help';
         node = qaStoreService.getByUrl('i-want-to-help');
       }

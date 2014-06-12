@@ -1,6 +1,6 @@
 angular.module('helpApp',
-  ['dataFetch', 'qaStore','ngRoute', 'breadcrumbs', 'haQuestions','haPrFlags', 'haShareResources',
-    'haSupportComponents', 'haTriage','haAnimations']).
+  ['breadcrumbs','dataFetch', 'haAnimations', 'haPrFlags', 'haQuestions', 'haShareResources',
+    'haSupportComponents', 'haTriage', 'ngRoute', 'qaStore']).
       config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/questions/help-support-components/:componentCat?/:subComponentCat?', {
           controller: 'SupportComponentsController',

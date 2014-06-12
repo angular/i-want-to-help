@@ -7,7 +7,7 @@ describe('haQuestions', function() {
   }));
 
   describe('questionsController', function() {
-    describe('setNodeByUrl()', function() {
+    describe('set node by url', function() {
       it('should set the current node according to the url', function() {
         var ctrl = $controller('QuestionsController', {$routeParams: {url: 'i-want-to-help'}});
         expect(ctrl.currentNode.url).toBe('i-want-to-help');
