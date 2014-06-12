@@ -15,8 +15,8 @@
       <label>Search common type:</label>
       <button ng-click="prFlagsCtrl.query = 'gh: issue'">gh: issue</button>
       <button ng-click="prFlagsCtrl.query = 'frequency: moderate'">frequency: moderate</button>
-      <button ng-click="prFlagsCtrl.query = 'type: bug'">type: bug</button>
-      <button ng-click="prFlagsCtrl.query = 'high priority'">high priority</button>
+      <button ng-click="prFlagsCtrl.query = 'bug'">bug</button>
+      <button ng-click="prFlagsCtrl.query = 'component'">component</button>
     </div>
     <div>
       <span class="glyphicon glyphicon-search search-icon"></span>
@@ -25,10 +25,10 @@
   </div>
   <div>
     <ul>
-      <div ng-repeat="issue in prFlagsCtrl.results | filter: prFlagsCtrl.query" class="item-listing">
+      <div ng-repeat="issue in prFlagsCtrl.results | filter: prFlagsCtrl.query " class="item-listing">
         <!-- <div ng-include src="'questions/partials/github-list.html'"></div> -->
         <span>
-          <h4><a ng-href="{{issue['html_url']}}">{{issue['title']}}</a></h4>
+          <h4 class="condense"><a ng-href="{{issue['html_url']}}">{{issue['title']}}</a></h4>
         </span>
         <div>
           <ng-pluralize count="{{issue.labels.length}}"

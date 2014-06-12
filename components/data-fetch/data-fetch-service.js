@@ -12,8 +12,11 @@ angular.module('dataFetch').
         return triageResults;
       };
       this.fetchPR = function(query) {
-        var prUrl = 'https://api.github.com/search/'
-          +'issues?labels=PRs%20plz%21&q=angular+'+encodeURI(query)+'&sort=created&per_page=25';
+        if(query != '') {
+          query = '&q='+encodeURI(query);
+        }
+        var prUrl = 'https://api.github.com/repos/angular/angular.js/'
+          +'issues?labels=PRs%20plz%21'+query+'&sort=created';
         console.log(prUrl)
         var prResults = this.fetchData(prUrl);
         return prResults;

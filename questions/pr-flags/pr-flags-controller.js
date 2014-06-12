@@ -5,9 +5,9 @@ controller('PrFlagsController', ['dataFetchService','$timeout',
     this.noLabels = 'This issue has no labels, learn more about triaging issues'+
             '<a ng-href="#questions/help-triage">here</a>.';
     this.getPrList = function(query) {
-      console.log(query)
+      //console.log(query)
       dataFetchService.fetchPR(query).then(function(gitHubResponse) {
-        this.results = dataFetchService.mergeAndRemoveDuplicates(gitHubResponse.data.items);
+        this.results = dataFetchService.mergeAndRemoveDuplicates(gitHubResponse.data);
       }.bind(this));
     };
     this.updateList = function(query) {

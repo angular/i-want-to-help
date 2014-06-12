@@ -1,8 +1,7 @@
 describe('haPrFlags', function() {
   var $controller, mockDataFetchService;
-  var url =
-    'https://api.github.com/search/'
-    + 'issues?q=angular+angular.js+user:angular&sort=created&per_page=25';
+  var url = 'https://api.github.com/repos/angular/angular.js/'
+          +'issues?labels=PRs%20plz%21&sort=created';
 
   beforeEach(module('haPrFlags'));
   beforeEach(inject(function(_$controller_, $injector, $q) {
