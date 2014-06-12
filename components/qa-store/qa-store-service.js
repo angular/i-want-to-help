@@ -14,19 +14,19 @@ angular.module('qaStore').
       url: 'help-pr-flags',
       backUrl: 'help-improve-angular',
       choices: [],
-      question: 'I can help with pull request flags on github.'
+      question: 'I can help fulfill pull request flags on GitHub.'
     };
     helpTriage = {
       url: 'help-triage',
       backUrl: 'help-improve-angular',
       choices: [],
-      question: 'I can help triage issues for Angular on github.'
+      question: 'I can help triage issues for Angular on GitHub.'
     };
     helpShareResources = {
       url: 'help-share-resources',
       backUrl: 'help-other-devs',
       choices: [],
-      question: 'I can help share resources that help understand Angular.'
+      question: 'I can help share resources for learning Angular.'
     };
     helpUpdateDocs = {
       url: 'help-update-docs',

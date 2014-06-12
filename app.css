@@ -62,9 +62,6 @@ a.inactive:hover{
 * Style for questions buttons
 */
 .questions{
-<<<<<<< HEAD
-  margin-top:14%;
-=======
   height:100% !important;
   margin-top:10%;
   padding: 12% 0 !important;
@@ -81,7 +78,6 @@ a.inactive:hover{
 
 .questions a{
   padding: 20% 0 !important;
->>>>>>> style(helpApp): update general application styling
 }
 
 .space {
