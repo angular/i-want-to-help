@@ -75,6 +75,7 @@ a.inactive:hover{
   font-weight:100;
   color:white;
 }
+
 .simpleLink{
   text-decoration:none !important;
   color:#fff;
@@ -82,6 +83,7 @@ a.inactive:hover{
 .simpleLink:hover{
   color:#fff;
 }
+
 .questions a{
   padding: 20% 0 !important;
 }
