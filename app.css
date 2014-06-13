@@ -63,7 +63,7 @@ a.inactive:hover{
 */
 .questions{
   height:100% !important;
-  margin-top:10%;
+  margin-top: 2%;
   padding: 12% 0 !important;
 }
 
@@ -75,7 +75,13 @@ a.inactive:hover{
   font-weight:100;
   color:white;
 }
-
+.simpleLink{
+  text-decoration:none !important;
+  color:#fff;
+}
+.simpleLink:hover{
+  color:#fff;
+}
 .questions a{
   padding: 20% 0 !important;
 }
