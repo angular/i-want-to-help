@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ealtenho/i-want-to-help.git"
+    "url": "https://github.com/angular/i-want-to-help.git"
   },
   "author": "ealtenho",
   "license": "apache 2",
   "bugs": {
-    "url": "https://github.com/ealtenho/i-want-to-help/issues"
+    "url": "https://github.com/angular/i-want-to-help/issues"
   },
-  "homepage": "https://github.com/ealtenho/i-want-to-help",
+  "homepage": "https://github.com/angular/i-want-to-help",
   "devDependencies": {
     "karma": "^0.12.16",
     "karma-chrome-launcher": "^0.1.4",
